@@ -193,7 +193,7 @@ a{
 .social ul{
     display: flex;
     
-    height: 15vh;
+    height: 3vh;
     width: max-content;
 }
 .social ul:hover{
@@ -333,16 +333,18 @@ li img:hover{
 .banking:hover {
     transition: 0.5s ease-in-out;
     /* transform: translateZ(-10px); */
-    transform: skewX(1.3deg);
+    transform: translate(1rem);
+    /* transform: skewX(1.3deg); */
     /* transform: rotateZ(10deg); */
-    box-shadow: 10px 5px 5px orange;
+    box-shadow: 10px 5px 5px rgba(255, 166, 0, 0.671);
 }
 
 .ecommerce:hover {
     transition:0.5s ease-in-out;
-    transform: skewX(1.3deg);
+    /* transform: skewX(1.3deg); */
+    transform: translate(1rem);
     /* transform: rotateX(10deg); */
-    box-shadow: 10px 5px 5px orange;
+    box-shadow: 10px 5px 5px rgba(255, 166, 0, 0.493);
     /* animation: float-in-from-left 2s ease-in-out; */
 }
 .works .logos{
@@ -384,9 +386,10 @@ li img:hover{
 }
 .sorting:hover {
     transition: 0.5s ease-in-out;
-    transform: skewX(1.3deg);
+    /* transform: skewX(1.3deg); */
+    transform: translate(1rem);
     /* transform: rotateX(10deg); */
-    box-shadow: 10px 5px 5px orange;
+    box-shadow: 10px 5px 5px rgba(255, 166, 0, 0.562);
 }
 .banking img{
     width: 100%;
@@ -558,7 +561,7 @@ li img:hover{
 }
 .contact-data{
     padding-top: 30px;
-        padding-right: 50px;
+    padding-right: 50px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     justify-content: center;
@@ -567,7 +570,7 @@ li img:hover{
 }
 .contact-details,.contact-data{
     width: 30%;
-    height: 60vh;
+    height:60vh;
     background-color: #1C82AD;
     /* border: 3px solid white; */
     /* border-radius:  12px; */
@@ -600,15 +603,16 @@ li img:hover{
 #inputbox{
     width: 90%;
     height: 40px;
-    border-radius: 40px;
+    border-radius: 16px;
     color: white;
     background-color: inherit;
 }
 #inputdescription{
+    font-size: larger;
     width: 90%;
     height: 17vh;
     border-right: white;
-    border-radius: 40px;
+    border-radius: 16px;
     color: white;
     background-color: inherit;
 }
@@ -681,8 +685,24 @@ li img:hover{
 }
 
 @media (max-width:980px) {
+
     .navbar{
-        
         height: max-content;
+    }
+}
+
+@media only screen and (max-device-width: 480px){
+    .root .body{
+        height: max-content;
+    }
+    .contact-form{
+        height: fit-content;
+    }
+    .contact-details{
+        height:fit-content ;
+    }
+    .contact-data{
+        padding: 33px;
+        height: 100%;
     }
 }
