@@ -270,7 +270,7 @@ li img:hover{
 .about-content p{
     text-align: flex-start;
     font-size: large;
-    font-family: cursive;
+/*     font-family: cursive; */
     text-transform: capitalize;
 }   
 .about-content li{
