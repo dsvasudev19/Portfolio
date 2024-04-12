@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #f3f0e8;
+  background-color: #ffffff;
 }
 ul {
   list-style-type: none;
@@ -138,10 +138,12 @@ a {
   /* border: 0.3px solid white; */
 }
 #abouts {
-  border: 3px solid #265073;
-  border-radius: 15px 15px 15px 15px;
-  box-shadow: 5px 5px 5px rgb(150, 148, 148);
+  padding: 3px;
+  border: 2px solid #265073;
+  border-radius: 15px ;
+  /* box-shadow: 5px 5px 5px rgb(150, 148, 148); */
   background-color: inherit;
+  margin-bottom: 5px;
 }
 #abouts:hover {
   transition: 0.4s ease-in-out;
@@ -220,7 +222,7 @@ li img {
 }
 li img:hover {
   transition: 0.4s ease-in-out;
-  box-shadow: 2px 3px 5px #9a1663;
+  box-shadow: 2px 3px 5px #dd7d10;
   transform: translateY(-7%);
   /* transform: scale(1.2, 1.2); */
 }
@@ -294,7 +296,7 @@ li img:hover {
 .works {
   padding-top: 7vh;
   margin-top: 50px;
-  padding: 30px;
+  padding: 10px;
   min-height: 50vh;
   display: flex;
   align-items: center;
@@ -311,7 +313,7 @@ li img:hover {
   /* box-shadow: 15px 15px 5px rgb(233, 230, 230); */
   /* border-radius: 50px; */
   /* background: #e0e0e0; */
-  box-shadow: 19px 19px 28px #8d8d8d, -19px -19px 28px #ffffff;
+  box-shadow: 19px 10px 15px #8d8d8d, -19px -19px 28px #ffffff;
 }
 
 .ecommerce {
@@ -322,7 +324,7 @@ li img:hover {
   overflow: hidden;
   /* box-shadow: 15px 15px 5px rgb(233, 230, 230); */
   /* background: #e0e0e0; */
-  box-shadow: 19px 19px 28px #8d8d8d, -19px -19px 28px #ffffff;
+  box-shadow: 19px 10px 15px #8d8d8d, -19px -19px 28px #ffffff;
 }
 .sorting {
   margin-top: 20px;
@@ -332,12 +334,12 @@ li img:hover {
   overflow: hidden;
   /* box-shadow: 15px 15px 5px rgb(233, 230, 230); */
   /* background: #e0e0e0; */
-  box-shadow: 19px 19px 28px #8d8d8d, -19px -19px 28px #ffffff;
+  box-shadow: 19px 10px 15px #8d8d8d, -19px -19px 28px #ffffff;
 }
 .banking:hover {
   transition: 0.5s ease-in-out;
   /* transform: translateZ(-10px); */
-  transform: translate(1rem);
+  transform: translate(0);
   /* transform: skewX(1.3deg); */
   /* transform: rotateZ(10deg); */
   box-shadow: 10px 5px 5px rgba(255, 166, 0, 0.671);
@@ -346,7 +348,7 @@ li img:hover {
 .ecommerce:hover {
   transition: 0.5s ease-in-out;
   /* transform: skewX(1.3deg); */
-  transform: translate(1rem);
+  transform: translate(0);
   /* transform: rotateX(10deg); */
   box-shadow: 10px 5px 5px rgba(255, 166, 0, 0.493);
   /* animation: float-in-from-left 2s ease-in-out; */
@@ -390,7 +392,7 @@ li img:hover {
 .sorting:hover {
   transition: 0.5s ease-in-out;
   /* transform: skewX(1.3deg); */
-  transform: translate(1rem);
+  transform: translate(0);
   /* transform: rotateX(10deg); */
   box-shadow: 10px 5px 5px rgba(255, 166, 0, 0.562);
 }
