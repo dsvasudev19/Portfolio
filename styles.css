@@ -17,13 +17,13 @@ a {
   color: inherit;
 }
 .root {
-  width: 90%;
+  width: 95%;
   min-height: 100vh;
 }
 .navbar {
   /* position: fixed; */
   width: 100%;
-  height: 7vh;
+  height: 10vh;
   /* background-color: #9EB8D9; */
   color: black;
   display: flex;
@@ -238,7 +238,10 @@ li img:hover {
   height: max-content;
   overflow: hidden;
   animation: none;
-  /* border: 3px solid black; */
+  border: 3px solid black;
+  border-radius: 10px;
+  border-radius: 14px;
+  box-shadow: 19px 19px 28px #8d8d8d, -19px -19px 28px #ffffff;
   /* animation: top-to-bottom 2.5s ease-in-out; */
 }
 
@@ -247,9 +250,10 @@ li img:hover {
 }
 .about-content {
   /* border: 3px solid black; */
-  width: 60%;
+  width: 90%;
   justify-content: center;
   text-align: left;
+  margin-bottom: 10px;
 }
 .buttons {
   display: flex;
@@ -296,7 +300,8 @@ li img:hover {
 .works {
   padding-top: 7vh;
   margin-top: 50px;
-  padding: 10px;
+  gap: 5px;
+  /* padding: 10px; */
   min-height: 50vh;
   display: flex;
   align-items: center;
