@@ -437,20 +437,21 @@
                         </p>
                     </div>
                 </div>
-                <form class="space-y-6 bg-gray-800/50 p-8 rounded-xl backdrop-blur-sm border border-gray-700/50">
+                <form class="space-y-6 bg-gray-800/50 p-8 rounded-xl backdrop-blur-sm border border-gray-700/50"  action="https://formspree.io/f/xnnqznyr"
+                method="POST">
                     <div>
                         <label class="block mb-2 text-emerald-400">Email</label>
-                        <input type="email" class="w-full p-3 bg-gray-700/50 rounded-lg border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all" placeholder="Your email" required>
+                        <input type="email" name="email" class="w-full p-3 bg-gray-700/50 rounded-lg border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all" placeholder="Your email" required>
                     </div>
                     <div>
                         <label class="block mb-2 text-emerald-400">Subject</label>
-                        <input type="text" class="w-full p-3 bg-gray-700/50 rounded-lg border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all" placeholder="Subject" required>
+                        <input type="text" name="subject" class="w-full p-3 bg-gray-700/50 rounded-lg border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all" placeholder="Subject" required>
                     </div>
                     <div>
                         <label class="block mb-2 text-emerald-400">Message</label>
-                        <textarea class="w-full p-3 bg-gray-700/50 rounded-lg border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all h-32" placeholder="Your message" required></textarea>
+                        <textarea name="message" class="w-full p-3 bg-gray-700/50 rounded-lg border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all h-32" placeholder="Your message" required></textarea>
                     </div>
-                    <button type="submit" onclick="submitform()" class="w-full bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:from-emerald-600 hover:to-blue-600 transition transform hover:scale-105 hover:shadow-lg flex items-center justify-center group">
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:from-emerald-600 hover:to-blue-600 transition transform hover:scale-105 hover:shadow-lg flex items-center justify-center group">
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
                     </button>
