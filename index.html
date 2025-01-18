@@ -247,10 +247,10 @@
                         <span class="mt-4 font-medium text-gray-300">React Native</span>
                     </div>
 
-                    <div class="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-emerald-500/30 hover:bg-gray-700/50 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                    <!-- <div class="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-emerald-500/30 hover:bg-gray-700/50 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
                         <img src="Assets/php.png" alt="PHP" class="w-16 h-16 object-contain hover:rotate-12 transition-transform duration-300">
                         <span class="mt-4 font-medium text-gray-300">PHP</span>
-                    </div>
+                    </div> -->
 
                     <div class="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-emerald-500/30 hover:bg-gray-700/50 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
                         <img src="Assets/mysqlnew.png" alt="MySQL" class="w-16 h-16 object-contain hover:rotate-12 transition-transform duration-300">
@@ -267,10 +267,10 @@
                         <span class="mt-4 font-medium text-gray-300">Bootstrap</span>
                     </div>
 
-                    <div class="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-emerald-500/30 hover:bg-gray-700/50 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                    <!-- <div class="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-emerald-500/30 hover:bg-gray-700/50 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
                         <img src="Assets/figma.png" alt="Figma" class="w-16 h-16 object-contain hover:rotate-12 transition-transform duration-300">
                         <span class="mt-4 font-medium text-gray-300">Figma</span>
-                    </div>
+                    </div> -->
 
                     <div class="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-emerald-500/30 hover:bg-gray-700/50 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
                         <img src="Assets/gitandgithub.png" alt="Git & GitHub" class="w-16 h-16 object-contain hover:rotate-12 transition-transform duration-300">
@@ -288,7 +288,27 @@
         <div id="works" class="py-20" data-aos="fade-up">
             <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Latest Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
+            
+                <div onclick="window.location.href='projexpert.html'" style="cursor: pointer" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
+                    <div class="relative overflow-hidden">
+                        <img src="Assets/projexpert.png" alt="Project Management App" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">🔷 ProjeXpert</h3>
+                        <p class="mb-4 text-gray-300">Comprehensive project management platform with GitHub integration, task tracking, and Kanban boards</p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/dsvasudev19/ProjeXpert" target="_blank" class="text-emerald-400 hover:text-emerald-300 transform hover:scale-110 transition-all">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                            <a href="https://projexpert.vercel.app/" target="_blank" class="text-emerald-400 hover:text-emerald-300 transform hover:scale-110 transition-all">
+                                <i class="fas fa-external-link-alt text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="window.location.href='smart-transit.html'" style="cursor: pointer" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
                     <div class="relative overflow-hidden">
                         <img src="Assets/urbanpulse.png" alt="SmartTransit Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -307,7 +327,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
+                <div onclick="window.location.href='playpitch.html'" style="cursor: pointer" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
                     <div class="relative overflow-hidden">
                         <img src="Assets/playpitch.png" alt="PlayPitch Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -326,7 +346,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
+                <div onclick="window.location.href='vehicle-rental.html'" style="cursor: pointer" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
                     <div class="relative overflow-hidden">
                         <img src="Assets/image.png" alt="Vehicle Rentals Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -345,7 +365,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
+                <div onclick="window.location.href='chatterbox.html'" style="cursor: pointer" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
                     <div class="relative overflow-hidden">
                         <img src="Assets/chatterbox.png" alt="Chatterbox Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
