@@ -1,147 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>PlayPitch - Vasu{dev}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="Assets/author.png">
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</head>
 
-<body class="bg-gray-900 text-white">
-    <div class="max-w-7xl mx-auto px-4">
-        <!-- Navigation Bar -->
-        <nav class="flex items-center justify-between py-4 px-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-700/50 transform hover:scale-[1.02] transition-all duration-300 mt-4 mx-auto max-w-7xl fixed top-0 left-0 right-0 z-50">
-            <a href="index.html" class="text-xl font-bold relative group">
-                <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Vasu</span>
-                <span class="text-emerald-500 transform transition-transform group-hover:rotate-12 inline-block">{</span>
-                <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">.dev</span>
-                <span class="text-emerald-500 transform transition-transform group-hover:-rotate-12 inline-block">}</span>
-                <div class="absolute -inset-2 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
-            </a>
-            <a href="index.html" class="relative px-3 py-1.5 group">
-                <span class="relative z-10 text-white group-hover:text-emerald-50 transition-colors duration-300">Back to Portfolio</span>
-                <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg opacity-0 group-hover:opacity-100 -z-10 transform scale-90 group-hover:scale-100 transition-all duration-300"></div>
-            </a>
-        </nav>
+    <head>
+        <title>PlayPitch - Vasu{dev}</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" href="Assets/author.png">
+        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <style>
+            /* Custom Reveal Effect Styles */
+            .reveal-section {
+                position: relative;
+                overflow: hidden;
+            }
 
-        <!-- Project Header -->
-        <div class="py-32 relative mt-16" data-aos="fade-up">
-            <div class="absolute -top-10 -left-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
-            
-            <h1 class="text-6xl font-bold mt-4 animate-fade-in-up">
-                <span class="text-emerald-500 relative">
-                    PlayPitch
-                    <span class="absolute bottom-0 left-0 w-full h-1 bg-emerald-500 transform scale-x-0 transition-transform duration-500 hover:scale-x-100"></span>
-                </span>
-            </h1>
-            
-            <h2 class="text-2xl mt-6 text-gray-300">
-                Your Ultimate Sports Booking and Networking App
-            </h2>
+            .reveal-content {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 1s ease, transform 1s ease;
+            }
 
-            <div class="flex space-x-8 mt-10">
-                <a href="https://github.com/dsvasudev19/TurfSearchApp" class="group">
-                    <img src="Assets/GitHub.png" class="w-10 h-10 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12" alt="Github">
+            .reveal-mask {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom,
+                        rgba(17, 24, 39, 1) 0%,
+                        rgba(17, 24, 39, 0.8) 10%,
+                        rgba(17, 24, 39, 0) 30%);
+                z-index: 2;
+                transform: translateY(-101%);
+                pointer-events: none;
+            }
+
+            .reveal-active .reveal-mask {
+                animation: revealMaskSlide 1.5s forwards;
+            }
+
+            .reveal-active .reveal-content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            @keyframes revealMaskSlide {
+                0% {
+                    transform: translateY(-101%);
+                }
+
+                100% {
+                    transform: translateY(101%);
+                }
+            }
+
+            /* Sparkle effect */
+            .sparkle {
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                background: radial-gradient(circle, #fff, transparent);
+                border-radius: 50%;
+                opacity: 0.8;
+                pointer-events: none;
+                z-index: 10;
+            }
+
+            @keyframes sparkle-fall {
+                0% {
+                    transform: scale(0.5) translateY(0);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: scale(1.3) translateY(60px);
+                    opacity: 0;
+                }
+            }
+
+            /* Custom glow effect for enhanced mystique */
+            .glow-backdrop {
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.07) 0%, rgba(17, 24, 39, 0) 70%);
+                opacity: 0;
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .reveal-active .glow-backdrop {
+                animation: glow 2s forwards;
+            }
+
+            @keyframes glow {
+                0% {
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            /* Staggered paragraph reveal */
+            .reveal-paragraph {
+                opacity: 0;
+                transform: translateY(15px);
+                transition: opacity 0.8s ease, transform 0.8s ease;
+            }
+
+            .reveal-active .reveal-paragraph {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Navigation Bar -->
+            <nav
+                class="flex items-center justify-between py-4 px-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-700/50 transform hover:scale-[1.02] transition-all duration-300 mt-4 mx-auto max-w-7xl fixed top-0 left-0 right-0 z-50">
+                <a href="index.html" class="text-xl font-bold relative group">
+                    <span
+                        class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Vasu</span>
+                    <span
+                        class="text-emerald-500 transform transition-transform group-hover:rotate-12 inline-block">{</span>
+                    <span
+                        class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">.dev</span>
+                    <span
+                        class="text-emerald-500 transform transition-transform group-hover:-rotate-12 inline-block">}</span>
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                    </div>
                 </a>
-                <a href="https://playpitch.vercel.app/" class="group">
-                    <i class="fas fa-external-link-alt text-4xl text-emerald-400 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12"></i>
+                <a href="index.html" class="relative px-3 py-1.5 group">
+                    <span
+                        class="relative z-10 text-white group-hover:text-emerald-50 transition-colors duration-300">Back
+                        to Portfolio</span>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg opacity-0 group-hover:opacity-100 -z-10 transform scale-90 group-hover:scale-100 transition-all duration-300">
+                    </div>
                 </a>
-            </div>
-        </div>
+            </nav>
 
-        <!-- Project Overview -->
-        <div class="py-16" data-aos="fade-up">
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300">
-                <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Overview</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    PlayPitch is an all-in-one mobile application designed to simplify your sports experience. Whether you're looking to book a turf for your favorite game (cricket, basketball, football, and more), organize a tournament, or connect with other sports enthusiasts, PlayPitch has got you covered.
-                </p>
-            </div>
-        </div>
+            <!-- Project Header -->
+            <div class="py-32 relative mt-16 reveal-section" id="reveal-header">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl animate-pulse">
+                </div>
+                <div
+                    class="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl animate-pulse">
+                </div>
+                <div class="glow-backdrop"></div>
+                <div class="reveal-mask"></div>
 
-        <!-- App Screenshots -->
-        <div class="py-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">App Screenshots</h2>
-            <div class="flex flex-row gap-4 overflow-x-auto pb-4 justify-center">
-                <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1737224787/asls2o9xa4lup5yvmrzl.jpg" alt="Home Screen" class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1737224787/axva4xc0wt941mmsyoka.jpg" alt="Booking Overview" class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722834/Screenshot_20241209_110733_TurfCare_ynx1qg.jpg" alt="Tournament Creation" class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722834/Screenshot_20241209_110746_TurfCare_fxwkzf.jpg" alt="Connect with Players" class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-            </div>
-        </div>
+                <div class="reveal-content">
+                    <h1 class="text-6xl font-bold mt-4 reveal-paragraph" style="transition-delay: 0.3s;">
+                        <span class="text-emerald-500 relative">
+                            PlayPitch
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-1 bg-emerald-500 transform scale-x-0 transition-transform duration-500 hover:scale-x-100"></span>
+                        </span>
+                    </h1>
 
-        <!-- Key Features -->
-        <div class="py-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Key Features</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
-                        <i class="fas fa-futbol text-emerald-400"></i>
+                    <h2 class="text-2xl mt-6 text-gray-300 reveal-paragraph" style="transition-delay: 0.6s;">
+                        Your Ultimate Sports Booking and Networking App
+                    </h2>
+
+                    <div class="flex space-x-8 mt-10 reveal-paragraph" style="transition-delay: 0.9s;">
+                        <a href="https://github.com/dsvasudev19/TurfSearchApp" class="group">
+                            <img src="Assets/GitHub.png"
+                                class="w-10 h-10 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12"
+                                alt="Github">
+                        </a>
+                        <a href="https://playpitch.vercel.app/" class="group">
+                            <i
+                                class="fas fa-external-link-alt text-4xl text-emerald-400 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12"></i>
+                        </a>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Book Sports Turfs</h3>
-                    <p class="text-gray-300">Seamlessly book turfs for multiple sports with real-time availability tracking in your locality.</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
-                        <i class="fas fa-trophy text-emerald-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Create Tournaments</h3>
-                    <p class="text-gray-300">Organize tournaments, invite players, and track progress in real-time.</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
-                        <i class="fas fa-users text-emerald-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Connect with Players</h3>
-                    <p class="text-gray-300">Build your sports network and connect with fellow sports enthusiasts.</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
-                        <i class="fas fa-calendar-alt text-emerald-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Event Management</h3>
-                    <p class="text-gray-300">Manage events, schedules, and bookings with personalized notifications.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Technologies -->
-        <div class="py-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Technologies Used</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <i class="fab fa-node-js text-4xl text-emerald-400 mb-2"></i>
-                    <p>Node.js</p>
-                </div>
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <i class="fab fa-react text-4xl text-emerald-400 mb-2"></i>
-                    <p>React Native</p>
-                </div>
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <i class="fas fa-database text-4xl text-emerald-400 mb-2"></i>
-                    <p>MySQL</p>
-                </div>
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105">
-                    <i class="fas fa-server text-4xl text-emerald-400 mb-2"></i>
-                    <p>Express.js</p>
+            <!-- Project Overview -->
+            <div class="py-16 reveal-section" id="reveal-overview">
+                <div class="glow-backdrop"></div>
+                <div class="reveal-mask"></div>
+
+                <div class="reveal-content">
+                    <div
+                        class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300">
+                        <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 reveal-paragraph"
+                            style="transition-delay: 0.3s;">Overview</h2>
+                        <p class="text-gray-300 leading-relaxed reveal-paragraph" style="transition-delay: 0.6s;">
+                            PlayPitch is an all-in-one mobile application designed to simplify your sports experience.
+                            Whether you're looking to book a turf for your favorite game (cricket, basketball, football,
+                            and more), organize a tournament, or connect with other sports enthusiasts, PlayPitch has
+                            got you covered.
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <!-- App Screenshots -->
+            <div class="py-16 reveal-section" id="reveal-screenshots">
+                <div class="glow-backdrop"></div>
+                <div class="reveal-mask"></div>
+
+                <div class="reveal-content">
+                    <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 reveal-paragraph"
+                        style="transition-delay: 0.3s;">App Screenshots</h2>
+                    <div class="flex flex-row gap-4 overflow-x-auto pb-4 justify-center reveal-paragraph"
+                        style="transition-delay: 0.6s;">
+                        <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1737224787/asls2o9xa4lup5yvmrzl.jpg"
+                            alt="Home Screen"
+                            class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1737224787/axva4xc0wt941mmsyoka.jpg"
+                            alt="Booking Overview"
+                            class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722834/Screenshot_20241209_110733_TurfCare_ynx1qg.jpg"
+                            alt="Tournament Creation"
+                            class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722834/Screenshot_20241209_110746_TurfCare_fxwkzf.jpg"
+                            alt="Connect with Players"
+                            class="w-64 h-auto flex-shrink-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="py-16 reveal-section" id="reveal-features">
+                <div class="glow-backdrop"></div>
+                <div class="reveal-mask"></div>
+
+                <div class="reveal-content">
+                    <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 reveal-paragraph"
+                        style="transition-delay: 0.3s;">Key Features</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 0.4s;">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-futbol text-emerald-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4">Book Sports Turfs</h3>
+                            <p class="text-gray-300">Seamlessly book turfs for multiple sports with real-time
+                                availability tracking in your locality.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 0.6s;">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-trophy text-emerald-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4">Create Tournaments</h3>
+                            <p class="text-gray-300">Organize tournaments, invite players, and track progress in
+                                real-time.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 0.8s;">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-users text-emerald-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4">Connect with Players</h3>
+                            <p class="text-gray-300">Build your sports network and connect with fellow sports
+                                enthusiasts.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 1s;">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-calendar-alt text-emerald-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4">Event Management</h3>
+                            <p class="text-gray-300">Manage events, schedules, and bookings with personalized
+                                notifications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="py-16 reveal-section" id="reveal-tech">
+                <div class="glow-backdrop"></div>
+                <div class="reveal-mask"></div>
+
+                <div class="reveal-content">
+                    <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 reveal-paragraph"
+                        style="transition-delay: 0.3s;">Technologies Used</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 0.4s;">
+                            <i class="fab fa-node-js text-4xl text-emerald-400 mb-2"></i>
+                            <p>Node.js</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 0.6s;">
+                            <i class="fab fa-react text-4xl text-emerald-400 mb-2"></i>
+                            <p>React Native</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 0.8s;">
+                            <i class="fas fa-database text-4xl text-emerald-400 mb-2"></i>
+                            <p>MySQL</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 text-center border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 reveal-paragraph"
+                            style="transition-delay: 1s;">
+                            <i class="fas fa-server text-4xl text-emerald-400 mb-2"></i>
+                            <p>Express.js</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="py-8 text-center border-t border-gray-800">
+                <p class="text-gray-400">© <span id="year"></span> Vasu{dev} - All Rights Reserved</p>
+            </footer>
         </div>
 
-        <!-- Footer -->
-        <footer class="py-8 text-center border-t border-gray-800">
-            <p class="text-gray-400">© <span id="year"></span> Vasu{dev} - All Rights Reserved</p>
-        </footer>
-    </div>
+        <script>
+            // Initialize AOS
+            AOS.init({disable: true}); // Disable AOS since we're using our own reveal effect
+            document.getElementById("year").innerHTML = new Date().getFullYear();
 
-    <script>
-        AOS.init();
-        document.getElementById("year").innerHTML = new Date().getFullYear();
-    </script>
-</body>
+            // Magical reveal effect implementation
+            document.addEventListener("DOMContentLoaded", function () {
+                // Check if element is in viewport
+                function isInViewport(element) {
+                    const rect = element.getBoundingClientRect();
+                    return (
+                        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                        rect.bottom >= 0
+                    );
+                }
+
+                // Add sparkles to an element
+                function addSparkles(element, duration = 2000) {
+                    const startTime = Date.now();
+                    const sparkleInterval = setInterval(() => {
+                        const sparkle = document.createElement('div');
+                        sparkle.classList.add('sparkle');
+
+                        // Random size
+                        const size = 3 + Math.random() * 6;
+                        sparkle.style.width = `${ size }px`;
+                        sparkle.style.height = `${ size }px`;
+
+                        // Random position - focus around the center of the section
+                        const rect = element.getBoundingClientRect();
+                        const y = Math.random() * rect.height * 0.8;
+                        sparkle.style.top = `${ y }px`;
+                        sparkle.style.left = `${ Math.random() * rect.width }px`;
+
+                        // Random color tint (emerald-themed)
+                        const colors = ['255, 255, 255', '200, 255, 230', '180, 255, 210', '16, 185, 129'];
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+                        sparkle.style.background = `radial-gradient(circle, rgba(${ color }, 1), rgba(${ color }, 0))`;
+
+                        // Animation duration
+                        const sparkDuration = 1 + Math.random() * 2;
+                        sparkle.style.animation = `sparkle-fall ${ sparkDuration }s ease-out forwards`;
+
+                        element.appendChild(sparkle);
+                        setTimeout(() => sparkle.remove(), sparkDuration * 1000);
+                    }, 100);
+
+                    // Stop adding sparkles after duration
+                    setTimeout(() => clearInterval(sparkleInterval), duration);
+                }
+
+                // Reveal sections when they enter viewport
+                const revealSections = document.querySelectorAll('.reveal-section');
+
+                // Initial check for sections already in viewport on page load
+                revealSections.forEach(section => {
+                    if (isInViewport(section)) {
+                        setTimeout(() => {
+                            section.classList.add('reveal-active');
+                            addSparkles(section);
+                        }, 300);
+                    }
+                });
+
+                // Check on scroll
+                function checkReveal() {
+                    revealSections.forEach(section => {
+                        if (!section.classList.contains('reveal-active') && isInViewport(section)) {
+                            section.classList.add('reveal-active');
+                            addSparkles(section);
+                        }
+                    });
+                }
+
+                // Throttled scroll event
+                let scrollTimeout;
+                window.addEventListener('scroll', function () {
+                    if (scrollTimeout) clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(checkReveal, 100);
+                });
+
+                // Immediately trigger the first section
+                setTimeout(() => {
+                    const firstSection = document.getElementById('reveal-header');
+                    if (firstSection) {
+                        firstSection.classList.add('reveal-active');
+                        addSparkles(firstSection);
+                    }
+                }, 500);
+            });
+        </script>
+    </body>
+
 </html>
