@@ -49,11 +49,46 @@ touch public/electron.cjs
 
 ```
 
+
 Add your Electron main process logic inside `public/electron.cjs`.
 
 > ✅ Use `.cjs` extension to avoid ES Module issues with `require()` and Node.js.
 
 ----------
+
+
+```js
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+function createWindow() {
+  const mainWindow = new BrowserWindow({
+    width: 1024,
+    height: 768,
+    webPreferences: {
+      contextIsolation: true,
+    },
+  });
+
+  const startURL = app.isPackaged
+    ? path.join(__dirname, '../dist/index.html') // For production
+    : 'http://localhost:5173'; // For dev
+
+  mainWindow.loadURL(startURL);
+}
+
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
+```
 
 ## 📝 Step 4: Update `package.json`
 
