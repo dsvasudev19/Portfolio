@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProjectSlugs, projectDetails, type ProjectStatus } from "@/data/projects";
 import { Logo } from "@/components/Logo";
+import { site } from "@/data/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,7 +22,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projectDetails[slug];
   if (!project) return { title: "Project Not Found" };
-  return { title: `${project.title} | Vasu.dev`, description: project.overview };
+  const pageUrl = `${site.url}/projects/${slug}`;
+
+  return {
+    title: `${project.title}`,
+    description: project.subtitle || project.overview,
+    keywords: [...project.tech, "Vasudev Darse Shikari", "Vasu.dev", project.title, "software development project", "Full Stack Developer project"],
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
+    openGraph: {
+      title: `${project.title} | Vasu{.dev} Projects`,
+      description: project.subtitle || project.overview,
+      url: pageUrl,
+      type: "website",
+      images: project.screenshots.map((s) => ({ url: s })),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Vasu{.dev} Projects`,
+      description: project.subtitle || project.overview,
+      images: project.screenshots,
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: Props) {
@@ -31,8 +54,27 @@ export default async function ProjectPage({ params }: Props) {
 
   const images = [...project.screenshots, ...(project.diagrams?.map((d) => d.src) ?? [])];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": project.title,
+    "description": project.overview,
+    "programmingLanguage": project.tech,
+    "codeRepository": project.github || "",
+    "author": {
+      "@type": "Person",
+      "name": "Vasudev Darse Shikari",
+      "url": site.url
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-cream">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-cream">
       <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-ink bg-cream px-4">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between">
           <Logo />
@@ -104,5 +146,6 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </main>
     </div>
-  );
+  </>
+);
 }

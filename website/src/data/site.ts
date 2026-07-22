@@ -2,12 +2,14 @@ export const site = {
   name: "Vasudev Darse Shikari",
   brand: "Vasu{.dev}",
   location: "Hyderabad, Telangana, India",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://dsvasudev.netlify.app",
+  gtmId: process.env.NEXT_PUBLIC_GTM_ID || "GTM-N6W7M2ZB",
 
   hero: {
-    eyebrow: "Full Stack Engineer — FinTech · EdTech · SaaS",
-    headline: ["I build", "software", "companies", "bet on."],
+    eyebrow: "Full Stack Engineer — Agentic AI · MCP Servers · RAG",
+    headline: ["I build", "Agentic AI,", "MCP servers,", "and robust APIs."],
     description:
-      "I'm Vasudev — a Full Stack Engineer building production systems on Java/Spring Boot and Node/TypeScript, shipping React front ends, and now designing MCP servers that let AI agents act on real data instead of just talking about it.",
+      "I'm Vasudev — a Full Stack Engineer specializing in Agentic AI, custom MCP servers, and RAG pipelines. I build secure backends on Java/Spring Boot and Node/TypeScript, design tools that let AI agents take real actions on production systems, and design robust architectures that power autonomous execution.",
     stats: [
       { label: "Projects Shipped", value: "11+" },
       { label: "Companies", value: "3" },

@@ -82,7 +82,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={120} variant="right">
-            <form onSubmit={handleSubmit} className="card-b space-y-5 p-8">
+            <form id="contact-form" onSubmit={handleSubmit} className="card-b space-y-5 p-8">
               <div>
                 <label htmlFor="email" className="mb-2 block text-sm font-extrabold">
                   Email
@@ -101,7 +101,7 @@ export function Contact() {
                 </label>
                 <textarea id="message" name="message" required rows={4} placeholder="Tell me about your project..." className="glass-input resize-none" />
               </div>
-              <button type="submit" disabled={status === "loading"} className="btn btn-primary w-full justify-center">
+              <button id="contact-submit" type="submit" disabled={status === "loading"} className="btn btn-primary w-full justify-center">
                 {status === "loading" ? "Sending..." : "Send Message"}
               </button>
               {status === "success" && <p className="text-center text-sm font-bold">Message sent successfully!</p>}
