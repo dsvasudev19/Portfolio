@@ -65,7 +65,7 @@ export function SolutionsContact() {
         </Reveal>
 
         <Reveal delay={120} variant="scale" className="mt-12">
-          <form onSubmit={handleSubmit} className="card-b mx-auto max-w-2xl space-y-5 p-8">
+          <form id="solutions-contact-form" onSubmit={handleSubmit} className="card-b mx-auto max-w-2xl space-y-5 p-8">
             <div>
               <label htmlFor="s-email" className="mb-2 block text-sm font-extrabold">
                 Email
@@ -107,7 +107,7 @@ export function SolutionsContact() {
               />
             </div>
 
-            <button type="submit" disabled={status === "loading"} className="btn btn-primary w-full justify-center">
+            <button id="solutions-contact-submit" type="submit" disabled={status === "loading"} className="btn btn-primary w-full justify-center">
               {status === "loading" ? "Sending..." : "Send"}
             </button>
             {status === "success" && <p className="text-center text-sm font-bold">Got it — I&apos;ll reply soon.</p>}

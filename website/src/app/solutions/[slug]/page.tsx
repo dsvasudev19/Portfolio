@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { products } from "@/data/solutions";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { site } from "@/data/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -29,7 +30,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return { title: "Product Not Found" };
-  return { title: `${product.title} | Vasu.dev`, description: product.tagline };
+  const pageUrl = `${site.url}/solutions/${slug}`;
+
+  return {
+    title: `${product.title}`,
+    description: product.tagline,
+    keywords: [...product.techStack, ...product.idealFor, "Vasudev Darse Shikari", "Vasu.dev", product.title, "software solutions", "productized services"],
+    alternates: {
+      canonical: `/solutions/${slug}`,
+    },
+    openGraph: {
+      title: `${product.title} | Vasu{.dev} Solutions`,
+      description: product.tagline,
+      url: pageUrl,
+      type: "website",
+      images: [
+        {
+          url: "/assets/author.png",
+          width: 1200,
+          height: 630,
+          alt: `${product.title} solution`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.title} | Vasu{.dev} Solutions`,
+      description: product.tagline,
+      images: ["/assets/author.png"],
+    },
+  };
 }
 
 export default async function ProductPage({ params }: Props) {
@@ -37,8 +67,32 @@ export default async function ProductPage({ params }: Props) {
   const product = products.find((p) => p.slug === slug);
   if (!product) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.title,
+    "description": product.tagline,
+    "image": `${site.url}/assets/author.png`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Vasu{.dev}"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "0.00",
+      "availability": "https://schema.org/InStock",
+      "description": product.engagementModel
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-cream">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-cream">
       <Navbar />
 
       <main>
@@ -149,5 +203,6 @@ export default async function ProductPage({ params }: Props) {
 
       <Footer />
     </div>
-  );
+  </>
+);
 }

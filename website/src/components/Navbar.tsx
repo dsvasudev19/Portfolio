@@ -44,7 +44,11 @@ export function Navbar() {
         <ul className="hidden items-center gap-9 lg:flex">
           {primaryNav.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className="nav-link">
+              <Link
+                id={`nav-desktop-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                href={item.href}
+                className="nav-link"
+              >
                 {item.label}
               </Link>
             </li>
@@ -52,10 +56,10 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link href={site.resume} className="btn btn-ghost btn-sm" data-cursor-hover>
+          <Link id="nav-desktop-resume" href={site.resume} className="btn btn-ghost btn-sm" data-cursor-hover>
             Resume
           </Link>
-          <Link href="/#contact" className="btn btn-lime btn-sm" data-cursor-hover>
+          <Link id="nav-desktop-hire-me" href="/#contact" className="btn btn-lime btn-sm" data-cursor-hover>
             Hire Me
           </Link>
         </div>
@@ -90,6 +94,7 @@ export function Navbar() {
               {site.nav.map((item) => (
                 <li key={item.href}>
                   <Link
+                    id={`nav-mobile-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className="block rounded-lg px-1 py-3 text-2xl font-extrabold tracking-tight"
@@ -100,10 +105,10 @@ export function Navbar() {
               ))}
             </ul>
             <div className="mt-6 flex flex-col gap-3 border-t-2 border-ink pt-6">
-              <Link href={site.resume} onClick={() => setOpen(false)} className="btn btn-ghost justify-center">
+              <Link id="nav-mobile-resume" href={site.resume} onClick={() => setOpen(false)} className="btn btn-ghost justify-center">
                 Resume
               </Link>
-              <Link href="#contact" onClick={() => setOpen(false)} className="btn btn-lime justify-center">
+              <Link id="nav-mobile-hire-me" href="#contact" onClick={() => setOpen(false)} className="btn btn-lime justify-center">
                 Hire Me
               </Link>
             </div>
