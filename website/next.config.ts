@@ -11,14 +11,6 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cdn.jsdelivr.net" },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/assets/:path*",
-        destination: "/api/assets/:path*",
-      },
-    ];
-  },
 };
 
 export default nextConfig;
