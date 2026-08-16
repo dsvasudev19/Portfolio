@@ -222,7 +222,7 @@ export function Hero() {
               <div className="relative aspect-[4/5]">
                 <Image
                   src="/assets/new-me.png"
-                  alt={site.name}
+                  alt={`${site.name} — Full Stack Developer & Agentic AI Specialist`}
                   fill
                   className="object-cover object-top grayscale contrast-110"
                   priority

@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Vasudev Darse Shikari — Full Stack Developer specializing in Java Spring Boot, Node.js, TypeScript, React, and building custom Model Context Protocol (MCP) servers for Agentic AI workflows.",
   keywords: [
+    "dsvasudev.in",
+    "www.dsvasudev.in",
     "Vasudev Darse Shikari",
     "Vasu.dev",
     "Vasudev Darse",
@@ -93,17 +95,13 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}>
       <head>
         {gtmId && (
-          <Script
-            id="gtm"
-            strategy="afterInteractive"
+          <script
             dangerouslySetInnerHTML={{
-              __html: `
-                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','${gtmId}');
-              `,
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmId}');`,
             }}
           />
         )}

@@ -43,7 +43,7 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
         {project.coverType === "image" && project.thumbnail ? (
           <Image
             src={project.thumbnail}
-            alt={project.title}
+            alt={`${project.title} — ${project.description}`}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             unoptimized

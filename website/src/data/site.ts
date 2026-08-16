@@ -2,8 +2,8 @@ export const site = {
   name: "Vasudev Darse Shikari",
   brand: "Vasu{.dev}",
   location: "Hyderabad, Telangana, India",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://dsvasudev.netlify.app",
-  gtmId: process.env.NEXT_PUBLIC_GTM_ID || "GTM-N6W7M2ZB",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://dsvasudev.in",
+  gtmId: process.env.NEXT_PUBLIC_GTM_ID || "GTM-PS3PQ268",
 
   hero: {
     eyebrow: "Full Stack Engineer — Agentic AI · MCP Servers · RAG",
