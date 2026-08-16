@@ -28,16 +28,12 @@ export const site = {
   about: {
     kicker: "01 / About",
     lead: "I work at the intersection of the code and the customer.",
-    paragraphs: [
-      "I'm an independent Software Engineer based in Hyderabad with 2+ years of production experience across FinTech, EdTech, and SaaS. I build enterprise microservice backends with Java Full Stack (Spring Boot, Spring Security, PostgreSQL/MySQL), scalable SaaS platforms with the MERN Stack (MongoDB, Express, React, Node/TypeScript), and AI-driven applications with Agentic Frameworks and custom MCP servers.",
-      "I take deep personal interest in freelancing and helping founders turn early ideas into scalable 0-to-1 MVPs — handling system architecture, API design, database schemas, frontend interfaces, and CI/CD deployment pipelines.",
-      "Currently I'm a Full Stack Engineer at Kupa Inc, architecting a co-investing platform for high-net-worth investors, building ElevateHub on the side, and taking select freelance engineering projects for startups.",
-    ],
+    bio: "Full-stack engineer with 2+ years of production experience shipping enterprise systems across FinTech, EdTech, and SaaS. I help founders and engineering teams turn ambitious product visions into high-performance, production-ready software. Currently architecting co-investment platforms at Kupa Inc and available for select technical engagements.",
     facts: [
-      { label: "Role", value: "Software Engineer & Freelance MVP Builder" },
-      { label: "Now", value: "Full Stack Engineer @ Kupa Inc" },
-      { label: "Building", value: "ElevateHub — AI upskilling platform" },
-      { label: "Education", value: "B.Tech CSE, Malla Reddy Engineering College" },
+      { label: "ROLE", value: "Full-Stack Engineer" },
+      { label: "NOW", value: "Kupa Inc" },
+      { label: "BUILDING", value: "ElevateHub" },
+      { label: "EDUCATION", value: "B.Tech CSE" },
     ],
   },
 
@@ -75,7 +71,7 @@ export const mcp = {
   url: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector",
   tagline: "Talk to my profile through the Model Context Protocol",
   description:
-    "I built a personal MCP server that exposes my entire profile — experience, projects, skills, and even my calendar — as callable tools for AI agents like Claude. Instead of scraping a resume, an agent can query it directly and hold a real, up-to-date conversation about my work.",
+    "A custom Model Context Protocol (MCP) server exposing my engineering profile, system design principles, and live calendar booking as callable tools for AI agents like Claude & ChatGPT.",
   tools: [
     { name: "get_profile", description: "Core identity, headline, and summary" },
     { name: "get_bio", description: "Extended narrative background" },
@@ -139,6 +135,20 @@ export const agenticSkills = [
 ];
 
 export const skillGroups = [
+  {
+    key: "agentic",
+    label: "AI & Agentic Stack",
+    items: [
+      "Model Context Protocol",
+      "Claude / Anthropic API",
+      "OpenAI API",
+      "Agentic Workflows",
+      "Tool Calling",
+      "RAG & Vector Search",
+      "Prompt Engineering",
+      "LLM Orchestration",
+    ],
+  },
   {
     key: "languages",
     label: "Languages",

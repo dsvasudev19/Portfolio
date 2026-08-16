@@ -1,14 +1,14 @@
 # Vasudev Darse Shikari (DS Vasudev)
-> Full Stack Engineer specializing in Java Full Stack, MERN Stack, Agentic AI & MCP Servers, and fueling early-stage 0-to-1 startups through software engineering and freelancing.
+> Full Stack Engineer specializing in Java Full Stack, MERN Stack, Agentic AI & MCP Servers, and fueling early-stage startups through software engineering and freelancing.
 
 ## About
-Vasudev Darse Shikari is an independent Software Engineer based in Hyderabad, India. He builds enterprise-grade microservice backends, modern React/Next.js front ends, and Model Context Protocol (MCP) servers that connect AI agents with production APIs. As a passionate developer interested in freelancing and helping startups move from 0 to 1, Vasudev offers full-stack development, agentic AI integrations, and system architecture services.
+Vasudev Darse Shikari is an independent Software Engineer based in Hyderabad, India. He builds enterprise-grade microservice backends, modern React/Next.js front ends, and Model Context Protocol (MCP) servers that connect AI agents with production APIs. As a passionate developer interested in freelancing and helping startups launch production platforms, Vasudev offers full-stack development, agentic AI integrations, and system architecture services.
 
 ## Key Information
 - **Full Name:** Vasudev Darse Shikari
 - **Known As:** DS Vasudev / Vasu{.dev}
 - **Entity Type:** Individual Software Engineer / Freelancer (Not a company)
-- **Primary Roles:** Software Engineer, Full Stack Developer, Freelance Tech Lead & Startup 0-to-1 MVP Builder
+- **Primary Roles:** Software Engineer, Full Stack Developer, Freelance Tech Lead
 - **Location / Address:** Hyderabad, Telangana, India
 - **Email:** vasudevds1729@gmail.com
 - **Phone / WhatsApp:** +91 8328203617
@@ -28,15 +28,15 @@ Vasudev Darse Shikari is an independent Software Engineer based in Hyderabad, In
 - **DevOps & Cloud:** Docker, GitHub Actions CI/CD, AWS, Vercel, Netlify, Prometheus & Grafana
 
 ## Core Services & Freelance Offerings
-- **0-to-1 Startup MVP Engineering:** Building robust, scalable initial MVPs for startups from ground zero to launch.
+- **Full-Stack Platform Engineering:** Building robust, scalable initial production platforms for startups from ground zero to launch.
 - **Agentic AI & Custom MCP Integration:** Building Model Context Protocol servers enabling LLM agents to execute real system tools and API calls securely.
 - **Enterprise Microservices & REST APIs:** Architecting high-performance Java/Spring Boot and Node/TypeScript backends.
 - **Full Stack Web & Mobile Development:** Creating responsive React / Next.js web applications and cross-platform React Native apps.
 
 ## Key Projects
-1. **Portfolio MCP Connector:** Model Context Protocol (MCP) server exposing profile, projects, skills, system design, and calendar booking as callable tools for AI agents like Claude & ChatGPT.
+1. **ElevateHub:** AI-native learning management system & AI solutions suite — AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG vector Q&A engine, and real-time trainee skill graph.
 2. **CORE (AI Native Collaborative Organizational Resource Engine):** Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute platform actions in natural language.
-3. **ElevateHub:** AI-native learning management system & AI solutions provider — AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A, and live skill graph.
+3. **Portfolio MCP Connector:** Model Context Protocol (MCP) server exposing profile, projects, skills, system design, and calendar booking as callable tools for AI agents like Claude & ChatGPT.
 4. **DigiSchool Apps:** Upcoming AI-powered platform for managing whole school operations (staff, students, academics, attendance, and administrative workflows) across 8 microservices.
 5. **Co-Investing Platform (Kupa Inc):** Co-investment workflows and real-time portfolio tracking for high-net-worth investors across multiple asset classes.
 6. **ProjeXpert:** Enterprise project management platform built on Node.js, Express, React, MySQL, and GitHub API.
@@ -50,7 +50,7 @@ Vasudev Darse Shikari is an independent Software Engineer based in Hyderabad, In
 - **Website:** [https://dsvasudev.in](https://dsvasudev.in)
 - **GitHub:** [https://github.com/dsvasudev19](https://github.com/dsvasudev19) (@dsvasudev19)
 - **LinkedIn:** [https://www.linkedin.com/in/darseshikarivasudev/](https://www.linkedin.com/in/darseshikarivasudev/) (@darseshikarivasudev)
-- **Instagram:** [https://www.instagram.com/ds.vasudev/](https://www.instagram.com/ds.vasudev/) (@ds.vasudev)
+- **WhatsApp:** [https://wa.me/+918328203617](https://wa.me/+918328203617) (+91 8328203617)
 
 ## Links
 - [Full LLM Details](https://dsvasudev.in/llms-full.txt): Complete profile details, projects, skills, and MCP capabilities.
