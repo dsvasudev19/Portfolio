@@ -26,7 +26,7 @@ export function Skills() {
           {skills.map((skill) => (
             <div key={skill.name} className="border-b2 shadow-b-lime mx-2.5 flex items-center gap-3 rounded-full bg-cream px-5 py-3">
               <div className="relative h-6 w-6 shrink-0">
-                <Image src={skill.icon} alt="" fill className="object-contain" unoptimized />
+                <Image src={skill.icon} alt={skill.name} fill className="object-contain" unoptimized />
               </div>
               <span className="whitespace-nowrap text-sm font-bold text-ink">{skill.name}</span>
             </div>
