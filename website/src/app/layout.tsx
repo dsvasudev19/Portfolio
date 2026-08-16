@@ -91,6 +91,81 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const gtmId = site.gtmId;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${site.url}/#person`,
+        "name": site.name,
+        "url": site.url,
+        "image": `${site.url}/assets/author.png`,
+        "jobTitle": "Software Engineer & Full Stack Specialist",
+        "description": site.hero.description,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+          "addressCountry": "India"
+        },
+        "knowsAbout": [
+          "Java Full Stack Engineering",
+          "MERN Stack Development",
+          "Agentic AI Frameworks",
+          "Model Context Protocol (MCP)",
+          "MCP Servers",
+          "Java & Spring Boot",
+          "Node.js & TypeScript",
+          "React & Next.js",
+          "MongoDB & PostgreSQL",
+          "Startup 0-to-1 MVP Development",
+          "Freelance Software Engineering",
+          "System Design & Microservices",
+          "REST APIs",
+          "Docker & CI/CD Pipelines"
+        ],
+        "sameAs": [
+          site.social.github,
+          site.social.linkedin,
+          site.social.instagram
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `${site.url}/#profilepage`,
+        "url": site.url,
+        "name": `${site.name} — Full Stack Engineer & Agentic AI Specialist`,
+        "mainEntity": { "@id": `${site.url}/#person` },
+        "hasPart": [
+          {
+            "@type": "WebAPI",
+            "name": "Portfolio MCP Server",
+            "description": "Model Context Protocol endpoint exposing Vasudev's live tools and system context to AI agents",
+            "url": "https://vasudev-claude.vercel.app/claude-connector",
+            "documentation": `${site.url}/llms.txt`
+          }
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${site.url}/#service`,
+        "name": site.brand,
+        "url": site.url,
+        "logo": `${site.url}/assets/author.png`,
+        "image": `${site.url}/assets/author.png`,
+        "description": "Custom full-stack web and mobile development, microservice systems design, and Agentic AI integrations / MCP server construction by Vasudev Darse Shikari.",
+        "telephone": site.contact.phone,
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+          "addressCountry": "India"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}>
       <head>
@@ -98,6 +173,11 @@ export default function RootLayout({
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMS.txt Full Knowledge Base" />
         <meta name="mcp-server" content="https://vasudev-claude.vercel.app/claude-connector" />
         <link rel="mcp-server" href="https://vasudev-claude.vercel.app/claude-connector" />
+        <script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {gtmId && (
           <script
             dangerouslySetInnerHTML={{
