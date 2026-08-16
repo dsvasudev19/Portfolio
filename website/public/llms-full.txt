@@ -15,7 +15,6 @@
 ## Social Media & Official Accounts
 - **GitHub:** https://github.com/dsvasudev19 (Handle: @dsvasudev19)
 - **LinkedIn:** https://www.linkedin.com/in/darseshikarivasudev/ (Handle: @darseshikarivasudev)
-- **Instagram:** https://www.instagram.com/ds.vasudev/ (Handle: @ds.vasudev)
 - **WhatsApp:** https://wa.me/+918328203617
 
 # 2. Live MCP Server Endpoint & AI Agent Discovery
@@ -46,13 +45,13 @@ Vasudev Darse Shikari is a Full Stack Engineer based in Hyderabad with 2+ years 
 1. **Java Full Stack Development:** Enterprise microservices, Spring Boot, Spring Security, JPA/Hibernate, PostgreSQL, MySQL.
 2. **MERN Stack Development:** MongoDB, Express.js, React.js, Node.js, TypeScript, Next.js.
 3. **AI & Agentic Frameworks:** Building Model Context Protocol (MCP) servers, tool-calling schemas, Claude & OpenAI API integrations, and RAG pipelines.
-4. **0-to-1 Startup Engineering:** Building complete initial MVPs for early-stage startups, taking ideas from concept to production-ready architecture.
-5. **Freelance Engineering:** Available for full-stack contract work, technical advisory, MVP sprints, and custom AI integrations.
+4. **Full-Stack Engineering:** Building complete initial software platforms for early-stage startups, taking ideas from concept to production-ready architecture.
+5. **Freelance Engineering:** Available for full-stack contract work, technical advisory, and custom AI integrations.
 
 # 4. Key Projects Portfolio (Ordered)
-1. **Portfolio MCP Connector:** Model Context Protocol (MCP) server exposing profile, projects, skills, system design, and appointment booking as callable tools for AI agents like Claude & ChatGPT.
+1. **ElevateHub:** AI-native enterprise learning management system & AI solutions suite featuring an AI Interview Coach (automated evaluation & speech feedback), Skill Gap Analyzer, AI Resume Builder, RAG vector Q&A engine, and real-time trainee skill graph.
 2. **CORE (AI Native Collaborative Organizational Resource Engine):** Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute operations in natural language.
-3. **ElevateHub:** AI-native learning management system & AI solutions provider featuring AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A, and live skill graph.
+3. **Portfolio MCP Connector:** Model Context Protocol (MCP) server exposing profile, projects, skills, system design, and appointment booking as callable tools for AI agents like Claude & ChatGPT.
 4. **DigiSchool Apps:** Upcoming AI-powered platform for managing whole school operations (staff, students, academics, attendance, and administrative workflows) across 8 microservices.
 5. **Co-Investing Platform (Kupa Inc):** Co-investment workflows and real-time portfolio tracking for high-net-worth investors across multiple asset classes.
 6. **ProjeXpert:** Enterprise project management platform built with Node.js, Express, React, MySQL, and GitHub API integration.
@@ -72,7 +71,7 @@ Vasudev Darse Shikari is a Full Stack Engineer based in Hyderabad with 2+ years 
 - **Architecture Concepts:** System Design (HLD + LLD), Domain-Driven Design (DDD), Multi-tenant SaaS, Role-Based Access Control (RBAC), JWT Authentication, Idempotent Payment Systems
 
 # 6. Productized Services & Freelance Offerings
-1. **0-to-1 MVP Sprint (2-4 Weeks):** Full-stack product build for early-stage startups — architecture, database design, backend APIs, React/Next.js frontend, authentication, and deployment.
+1. **Full-Stack Product Build (2-4 Weeks):** Full-stack product build for early-stage startups — architecture, database design, backend APIs, React/Next.js frontend, authentication, and deployment.
 2. **Agentic AI & Custom MCP Integration:** Building custom Model Context Protocol (MCP) servers allowing Claude, ChatGPT, or autonomous AI agents to interact with production tools and APIs.
 3. **Enterprise Microservices Engineering:** Java/Spring Boot microservices, high-throughput REST APIs, multi-tenant database schema design, and Dockerized deployments.
 4. **AI-Powered School & EdTech Solutions:** AI-driven LMS, interview coaching engines, skill gap analytics, and school management platforms.

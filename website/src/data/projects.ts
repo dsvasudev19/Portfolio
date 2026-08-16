@@ -16,14 +16,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "mcp-connector",
-    title: "Portfolio MCP Connector",
+    slug: "elevatehub",
+    title: "ElevateHub",
     description:
-      "Model Context Protocol (MCP) server exposing profile, experience, projects, skills, and calendar booking as callable tools for AI agents like Claude & ChatGPT.",
-    status: "shipped",
+      "AI-native learning management system & AI solutions suite featuring an AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A engine, and real-time trainee skill graph.",
+    status: "in-development",
     coverType: "brand",
     accent: "lime",
-    tags: ["MCP", "TypeScript", "Node.js", "Claude API", "AI Agent Tools"],
+    tags: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API", "RAG Engine", "WebSockets"],
     featured: true,
   },
   {
@@ -38,14 +38,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "elevatehub",
-    title: "ElevateHub",
+    slug: "mcp-connector",
+    title: "Portfolio MCP Connector",
     description:
-      "AI-native learning management system & AI solutions provider — AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A, and live skill graph.",
-    status: "in-development",
+      "Model Context Protocol (MCP) server exposing profile, experience, projects, skills, and calendar booking as callable tools for AI agents like Claude & ChatGPT.",
+    status: "shipped",
     coverType: "brand",
     accent: "lime",
-    tags: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API", "RAG"],
+    tags: ["MCP", "TypeScript", "Node.js", "Claude API", "AI Agent Tools"],
     featured: true,
   },
   {
@@ -158,22 +158,23 @@ export type ProjectDetail = {
 };
 
 export const projectDetails: Record<string, ProjectDetail> = {
-  "mcp-connector": {
-    slug: "mcp-connector",
-    title: "Portfolio MCP Connector",
-    subtitle: "Model Context Protocol Server for AI Assistant Integration",
-    status: "shipped",
+  elevatehub: {
+    slug: "elevatehub",
+    title: "ElevateHub",
+    subtitle: "AI Native Learning Management System & AI Solutions Provider",
+    status: "in-development",
     overview:
-      "A custom Model Context Protocol (MCP) server that exposes Vasudev's complete engineering profile — work history, projects, skills, system design principles, and live calendar booking — as executable tools for AI agents like Claude and ChatGPT.",
+      "ElevateHub is an enterprise AI-native learning management system and solutions suite designed to upskill trainees and power training programs within organizations through autonomous AI coaching, automated gap analysis, and vector-search Q&A engines.",
     features: [
-      "16+ custom MCP tools: get_profile, get_projects, get_skills, check_slots, book_appointment",
-      "Connects directly with Claude custom connectors for interactive live Q&A",
-      "Enables AI agents to query experience metrics and schedule meetings dynamically",
-      "Built with TypeScript and Model Context Protocol SDK",
+      "AI Interview Coach: Interactive real-time technical interview practice with automated AI evaluation & speech feedback",
+      "Skill Gap Analyzer: Dynamic competency tracking mapping trainee skills to targeted learning paths",
+      "AI Resume Builder: Intelligent resume optimization tailored to specific engineering role criteria",
+      "RAG Knowledge Engine: Contextual vector search knowledge base using OpenAI embeddings for instant Q&A",
+      "Live Trainee Skill Graph: Real-time progress dashboard tracking competency metrics across cohorts",
+      "Multi-Role Dashboard: Dedicated interfaces for trainees, trainers, and organization admins",
     ],
-    tech: ["TypeScript", "Node.js", "Model Context Protocol", "Claude API", "JSON Schema"],
+    tech: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React 19", "OpenAI API", "RAG Engine", "Vector DB", "WebSockets"],
     screenshots: [],
-    live: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector",
   },
   "core-platform": {
     slug: "core-platform",
@@ -191,22 +192,22 @@ export const projectDetails: Record<string, ProjectDetail> = {
     tech: ["Java", "Spring Boot", "React", "Node.js", "MCP", "WebSocket", "Docker", "Socket.IO"],
     screenshots: [],
   },
-  elevatehub: {
-    slug: "elevatehub",
-    title: "ElevateHub",
-    subtitle: "AI Native Learning Management System & AI Solutions Provider",
-    status: "in-development",
+  "mcp-connector": {
+    slug: "mcp-connector",
+    title: "Portfolio MCP Connector",
+    subtitle: "Model Context Protocol Server for AI Assistant Integration",
+    status: "shipped",
     overview:
-      "ElevateHub is an AI-native learning management system and suite of AI tools (AI Interview Coach, Skill Gap Analyzer, AI Resume Builder) designed to upskill trainees and power training programs within organizations.",
+      "A custom Model Context Protocol (MCP) server that exposes Vasudev's complete engineering profile — work history, projects, skills, system design principles, and live calendar booking — as executable tools for AI agents like Claude and ChatGPT.",
     features: [
-      "AI Interview Coach: Interactive real-time technical interview practice with automated AI feedback",
-      "Skill Gap Analyzer: Dynamic competency tracking mapping trainee skills to targeted learning paths",
-      "AI Resume Builder: Intelligent resume optimization tailored to specific engineering role criteria",
-      "RAG-powered contextual knowledge base using vector search for instant Q&A",
-      "Trainee-trainer communication dashboard with real-time progress metrics",
+      "16+ custom MCP tools: get_profile, get_projects, get_skills, check_slots, book_appointment",
+      "Connects directly with Claude custom connectors for interactive live Q&A",
+      "Enables AI agents to query experience metrics and schedule meetings dynamically",
+      "Built with TypeScript and Model Context Protocol SDK",
     ],
-    tech: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API", "RAG", "WebSockets"],
+    tech: ["TypeScript", "Node.js", "Model Context Protocol", "Claude API", "JSON Schema"],
     screenshots: [],
+    live: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector",
   },
   digischool: {
     slug: "digischool",

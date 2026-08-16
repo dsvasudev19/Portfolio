@@ -129,7 +129,7 @@ export default function RootLayout({
         "sameAs": [
           site.social.github,
           site.social.linkedin,
-          site.social.instagram
+          site.social.whatsapp
         ]
       },
       {
