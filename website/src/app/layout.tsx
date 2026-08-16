@@ -94,6 +94,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}>
       <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMS.txt Index" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMS.txt Full Knowledge Base" />
+        <meta name="mcp-server" content="https://vasudev-claude.vercel.app/claude-connector" />
+        <link rel="mcp-server" href="https://vasudev-claude.vercel.app/claude-connector" />
         {gtmId && (
           <script
             dangerouslySetInnerHTML={{
