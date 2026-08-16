@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { animate, motion, useInView, useReducedMotion, type Variants } from "framer-motion";
+import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { site } from "@/data/site";
 import { Marquee } from "./Marquee";
 
@@ -23,11 +22,6 @@ const icons = {
       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
     </svg>
   ),
-  whatsapp: (
-    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.001 2c-5.523 0-10 4.477-10 10 0 1.821.487 3.53 1.338 5.003L2 22l5.15-1.312A9.958 9.958 0 0012.001 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.083a8.05 8.05 0 01-4.099-1.121l-.294-.174-3.055.779.816-2.978-.191-.306a8.05 8.05 0 01-1.24-4.283c0-4.454 3.627-8.081 8.081-8.081 4.454 0 8.081 3.627 8.081 8.081-.001 4.454-3.628 8.083-8.099 8.083z" />
-    </svg>
-  ),
   email: (
     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -39,67 +33,21 @@ const socials = [
   { href: site.social.github, label: "GitHub", icon: icons.github },
   { href: site.social.linkedin, label: "LinkedIn", icon: icons.linkedin },
   { href: site.social.instagram, label: "Instagram", icon: icons.instagram },
-  { href: site.social.whatsapp, label: "WhatsApp", icon: icons.whatsapp },
   { href: site.social.email, label: "Email", icon: icons.email },
 ];
 
 const ticker = [
-  "Full Stack Engineering",
+  "Java Full Stack (Spring Boot)",
+  "MERN Stack & Next.js",
   "Agentic AI & MCP Servers",
-  "System Design (HLD + LLD)",
-  "FinTech · EdTech · SaaS",
-  "Java / Spring Boot",
-  "Node.js / TypeScript",
+  "System Architecture (HLD + LLD)",
+  "Production Software Launch",
 ];
-
-const lineVariants: Variants = {
-  hidden: { opacity: 0, y: 60, rotate: 1 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    rotate: 0,
-    transition: { duration: 0.75, delay: 0.08 * i, ease: [0.16, 1, 0.3, 1] },
-  }),
-};
-
-function TypewriterLine() {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = site.roles[roleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (!deleting && text.length < current.length) {
-      timeout = setTimeout(() => setText(current.slice(0, text.length + 1)), 65);
-    } else if (!deleting && text.length === current.length) {
-      timeout = setTimeout(() => setDeleting(true), 1800);
-    } else if (deleting && text.length > 0) {
-      timeout = setTimeout(() => setText(current.slice(0, text.length - 1)), 35);
-    } else {
-      timeout = setTimeout(() => {
-        setDeleting(false);
-        setRoleIndex((i) => (i + 1) % site.roles.length);
-      }, 0);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, deleting, roleIndex]);
-
-  return (
-    <p className="mt-5 font-mono text-base font-semibold sm:text-lg">
-      <span className="text-muted">$ open_to </span>
-      {text}
-      <span className="ml-0.5 inline-block h-5 w-[3px] translate-y-0.5 animate-blink bg-ink align-middle" />
-    </p>
-  );
-}
 
 function StatNumber({ value }: { value: string }) {
   const match = value.match(/^(\d+)(.*)$/);
   const ref = useRef<HTMLParagraphElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const inView = useInView(ref, { once: true, margin: "-20px" });
   const [display, setDisplay] = useState(match ? `0${match[2]}` : value);
 
   useEffect(() => {
@@ -111,11 +59,10 @@ function StatNumber({ value }: { value: string }) {
       onUpdate: (v) => setDisplay(`${Math.round(v)}${match[2]}`),
     });
     return () => controls.stop();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView]);
+  }, [inView, match]);
 
   return (
-    <p ref={ref} className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+    <p ref={ref} className="text-xl sm:text-2xl font-extrabold tracking-tight text-ink">
       {match ? display : value}
     </p>
   );
@@ -125,80 +72,62 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="home" className="relative overflow-hidden pb-16 pt-36 sm:pt-44">
-      <div className="grid-dots pointer-events-none absolute inset-0 opacity-70" aria-hidden />
-
-      <div className="container-b relative">
-        <div className="grid items-start gap-14 lg:grid-cols-[1.25fr_0.9fr] lg:gap-10">
+    <section
+      id="home"
+      className="relative flex min-h-[calc(100dvh-5rem)] max-h-[100dvh] flex-col justify-between overflow-hidden pt-24 pb-3 lg:pt-28 lg:pb-4"
+    >
+      <div className="container-b relative my-auto">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+          {/* Left Column: Copy & Actions */}
           <div>
-            <motion.span
-              initial={reduceMotion ? undefined : { opacity: 0, y: -12 }}
+            <motion.div
+              initial={reduceMotion ? undefined : { opacity: 0, y: -8 }}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="badge-live max-w-full text-balance"
+              transition={{ duration: 0.4 }}
+              className="badge-live w-fit"
             >
               <span className="dot-live shrink-0" />
-              {site.hero.eyebrow}
-            </motion.span>
+              Available for Technical Engagements
+            </motion.div>
 
-            <h1 className="text-mega mt-6">
-              {site.hero.headline.map((line, i) => (
-                <motion.span
-                  key={line}
-                  custom={i}
-                  initial={reduceMotion ? undefined : "hidden"}
-                  animate={reduceMotion ? undefined : "show"}
-                  variants={lineVariants}
-                  className="block"
-                >
-                  {i === site.hero.headline.length - 1 ? (
-                    <span className="highlight">{line}</span>
-                  ) : (
-                    line
-                  )}
-                </motion.span>
-              ))}
-            </h1>
+            <motion.h1
+              initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-ink"
+            >
+              Your idea. Shipped as{" "}
+              <span className="highlight">production software.</span>
+            </motion.h1>
 
             <motion.p
-              initial={reduceMotion ? undefined : { opacity: 0, y: 20 }}
+              initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-7 max-w-xl text-lg font-medium leading-relaxed text-muted sm:text-xl"
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 text-base sm:text-lg font-medium leading-relaxed text-muted max-w-xl"
             >
-              {site.hero.description}
+              I build full-stack platforms and agentic AI tooling for startups — from architecture to launch.
             </motion.p>
 
             <motion.div
-              initial={reduceMotion ? undefined : { opacity: 0, y: 20 }}
+              initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4"
             >
-              <TypewriterLine />
-            </motion.div>
-
-            <motion.div
-              initial={reduceMotion ? undefined : { opacity: 0, y: 20 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-9 flex flex-wrap gap-3 sm:gap-4"
-            >
-              <Link href="#works" className="btn btn-primary" data-cursor-hover>
-                View My Work
+              <Link href="#works" className="btn btn-lime shadow-b-sm" data-cursor-hover>
+                View Projects
               </Link>
               <Link href="#contact" className="btn btn-ghost" data-cursor-hover>
-                Get in Touch
-              </Link>
-              <Link href={site.resume} className="btn btn-ghost" data-cursor-hover>
-                Resume
+                Book a Call
               </Link>
             </motion.div>
 
             <motion.div
               initial={reduceMotion ? undefined : { opacity: 0 }}
               animate={reduceMotion ? undefined : { opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.85 }}
-              className="mt-10 flex flex-wrap items-center gap-3"
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-6 flex flex-wrap items-center gap-2"
             >
               {socials.map((s) => (
                 <a
@@ -208,7 +137,7 @@ export function Hero() {
                   rel="noopener noreferrer"
                   aria-label={s.label}
                   data-cursor-hover
-                  className="btn btn-ghost btn-sm gap-2"
+                  className="btn btn-ghost btn-sm gap-1.5 py-1 text-xs"
                 >
                   {s.icon}
                   {s.label}
@@ -217,54 +146,61 @@ export function Hero() {
             </motion.div>
           </div>
 
+          {/* Right Column: Code / Terminal Technical Credibility Card */}
           <motion.div
-            initial={reduceMotion ? undefined : { opacity: 0, scale: 0.9, rotate: 4 }}
-            animate={reduceMotion ? undefined : { opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mx-auto w-full max-w-[360px] lg:mx-0 lg:ml-auto"
+            initial={reduceMotion ? undefined : { opacity: 0, scale: 0.96, y: 12 }}
+            animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-md mx-auto lg:max-w-none"
           >
-            <div className="border-b2 absolute inset-0 translate-x-3 translate-y-3 rounded-[1.75rem] bg-lime" aria-hidden />
-            <div className="border-b2 relative overflow-hidden rounded-[1.75rem] bg-ink">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src="/assets/new-me.png"
-                  alt={`${site.name} — Full Stack Developer & Agentic AI Specialist`}
-                  fill
-                  className="object-cover object-top grayscale contrast-110"
-                  priority
-                  unoptimized
-                />
+            <div className="border-b2 relative overflow-hidden rounded-2xl bg-ink p-5 sm:p-6 text-cream shadow-b">
+              {/* Window Bar Controls */}
+              <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
+                  <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
+                  <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
+                </div>
+                <span className="font-mono text-xs text-white/50">mcp-server.config.ts</span>
+              </div>
+
+              {/* Code Snippet */}
+              <pre className="font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto text-white/90">
+                <code>
+                  <span className="text-purple-400">export const</span>{" "}
+                  <span className="text-blue-400">engineer</span> = &#123;{"\n"}
+                  {"  "}<span className="text-emerald-400">name</span>: <span className="text-lime">"Vasudev Darse Shikari"</span>,{"\n"}
+                  {"  "}<span className="text-emerald-400">role</span>: <span className="text-lime">"Full-Stack & AI Engineer"</span>,{"\n"}
+                  {"  "}<span className="text-emerald-400">stack</span>: [<span className="text-lime">"Java"</span>, <span className="text-lime">"Spring"</span>, <span className="text-lime">"TypeScript"</span>, <span className="text-lime">"React"</span>],{"\n"}
+                  {"  "}<span className="text-emerald-400">mcpServer</span>: <span className="text-lime">"LIVE (16+ tools)"</span>,{"\n"}
+                  {"  "}<span className="text-emerald-400">availability</span>: <span className="text-lime">"Open for Select Projects"</span>{"\n"}
+                  &#125;;
+                </code>
+              </pre>
+
+              {/* Live Status Bar */}
+              <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-3 text-xs font-mono">
+                <div className="flex items-center gap-2 text-lime">
+                  <span className="h-2 w-2 rounded-full bg-lime animate-pulse" />
+                  <span>MCP Server: Live</span>
+                </div>
+                <span className="text-white/60">Engineer @ Kupa Inc</span>
               </div>
             </div>
-
-            <motion.div
-              animate={reduceMotion ? undefined : { y: [0, -10, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="border-b2 shadow-b-sm absolute -left-8 top-8 rounded-xl bg-cream px-3.5 py-2 text-xs font-bold sm:-left-10"
-            >
-              MCP server: live
-            </motion.div>
-            <motion.div
-              animate={reduceMotion ? undefined : { y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="border-b2 shadow-b-sm absolute -right-6 bottom-10 rounded-xl bg-lime px-3.5 py-2 text-xs font-bold sm:-right-9"
-            >
-              @ Kupa Inc
-            </motion.div>
           </motion.div>
         </div>
 
+        {/* Compact Stats Row */}
         <motion.div
-          initial={reduceMotion ? undefined : { opacity: 0, y: 24 }}
-          whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 grid grid-cols-3 gap-3 sm:mt-20 sm:gap-4"
+          initial={reduceMotion ? undefined : { opacity: 0, y: 12 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:gap-4"
         >
           {site.hero.stats.map((stat) => (
             <div key={stat.label} className={`stat-box pop ${stat.highlight ? "stat-box-highlight" : ""}`}>
               <StatNumber value={stat.value} />
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-muted sm:text-sm">
+              <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted sm:text-xs">
                 {stat.label}
               </p>
             </div>
@@ -272,10 +208,11 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="mt-16 sm:mt-20">
+      {/* Marquee Ticker */}
+      <div className="mt-4 sm:mt-6">
         <Marquee speed={26}>
           {ticker.map((item) => (
-            <span key={item} className="mx-4 flex items-center gap-4 whitespace-nowrap text-lg font-extrabold uppercase tracking-tight sm:text-xl">
+            <span key={item} className="mx-4 flex items-center gap-4 whitespace-nowrap text-sm font-extrabold uppercase tracking-tight sm:text-base">
               {item}
               <span className="text-lime" aria-hidden>
                 ✦

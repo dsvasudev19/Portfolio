@@ -6,14 +6,14 @@ export const site = {
   gtmId: process.env.NEXT_PUBLIC_GTM_ID || "GTM-PS3PQ268",
 
   hero: {
-    eyebrow: "Software Engineer — Java Full Stack · MERN · Agentic AI · 0-to-1 Startup Builder",
-    headline: ["I build", "0-to-1 MVPs,", "Agentic AI,", "and scalable APIs."],
+    eyebrow: "Full-Stack Engineer & Agentic AI Specialist",
+    headline: ["Your idea. Shipped as", "production software."],
     description:
-      "I'm Vasudev — an independent Software Engineer based in Hyderabad. I specialize in Java Full Stack (Spring Boot, Microservices), MERN Stack (MongoDB, Express, React, Node/TypeScript), and Agentic AI Frameworks (MCP Servers, RAG pipelines). I take personal interest in freelancing and fueling early-stage startups from 0 to 1 with production-ready software.",
+      "I build full-stack platforms and agentic AI tooling for startups — from architecture to launch.",
     stats: [
-      { label: "Projects Shipped", value: "11+" },
+      { label: "Systems Deployed", value: "11+" },
       { label: "Companies", value: "3" },
-      { label: "Status", value: "Open to Work & Freelance", highlight: true },
+      { label: "Availability", value: "Open for Engagements", highlight: true },
     ],
   },
 
