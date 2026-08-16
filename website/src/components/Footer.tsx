@@ -20,6 +20,9 @@ export function Footer() {
             <Link href={site.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm font-bold transition-opacity hover:opacity-60">
               LinkedIn
             </Link>
+            <Link href={site.social.instagram} target="_blank" rel="noopener noreferrer" className="text-sm font-bold transition-opacity hover:opacity-60">
+              Instagram
+            </Link>
             <Link href={site.social.email} className="text-sm font-bold transition-opacity hover:opacity-60">
               Email
             </Link>

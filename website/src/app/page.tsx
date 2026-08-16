@@ -29,24 +29,25 @@ export default function Home() {
           "addressCountry": "India"
         },
         "knowsAbout": [
-          "Full Stack Engineering",
-          "Agentic AI",
+          "Java Full Stack Engineering",
+          "MERN Stack Development",
+          "Agentic AI Frameworks",
           "Model Context Protocol (MCP)",
           "MCP Servers",
-          "Java",
-          "Spring Boot",
-          "Node.js",
-          "TypeScript",
-          "React",
-          "Next.js",
-          "System Design",
-          "Microservices",
+          "Java & Spring Boot",
+          "Node.js & TypeScript",
+          "React & Next.js",
+          "MongoDB & PostgreSQL",
+          "Startup 0-to-1 MVP Development",
+          "Freelance Software Engineering",
+          "System Design & Microservices",
           "REST APIs",
-          "Docker"
+          "Docker & CI/CD Pipelines"
         ],
         "sameAs": [
           site.social.github,
-          site.social.linkedin
+          site.social.linkedin,
+          site.social.instagram
         ]
       },
       {

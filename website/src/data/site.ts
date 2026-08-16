@@ -6,38 +6,38 @@ export const site = {
   gtmId: process.env.NEXT_PUBLIC_GTM_ID || "GTM-PS3PQ268",
 
   hero: {
-    eyebrow: "Full Stack Engineer — Agentic AI · MCP Servers · RAG",
-    headline: ["I build", "Agentic AI,", "MCP servers,", "and robust APIs."],
+    eyebrow: "Software Engineer — Java Full Stack · MERN · Agentic AI · 0-to-1 Startup Builder",
+    headline: ["I build", "0-to-1 MVPs,", "Agentic AI,", "and scalable APIs."],
     description:
-      "I'm Vasudev — a Full Stack Engineer specializing in Agentic AI, custom MCP servers, and RAG pipelines. I build secure backends on Java/Spring Boot and Node/TypeScript, design tools that let AI agents take real actions on production systems, and design robust architectures that power autonomous execution.",
+      "I'm Vasudev — an independent Software Engineer based in Hyderabad. I specialize in Java Full Stack (Spring Boot, Microservices), MERN Stack (MongoDB, Express, React, Node/TypeScript), and Agentic AI Frameworks (MCP Servers, RAG pipelines). I take personal interest in freelancing and fueling early-stage startups from 0 to 1 with production-ready software.",
     stats: [
       { label: "Projects Shipped", value: "11+" },
       { label: "Companies", value: "3" },
-      { label: "Status", value: "Open to Work", highlight: true },
+      { label: "Status", value: "Open to Work & Freelance", highlight: true },
     ],
   },
 
   roles: [
-    "Full Stack Engineering",
-    "Agentic AI & MCP Servers",
-    "System Design (HLD + LLD)",
-    "Java & Spring Boot",
-    "Node.js & TypeScript",
+    "Java Full Stack Engineering",
+    "MERN Stack Development",
+    "Agentic AI & MCP Frameworks",
+    "Startup 0-to-1 MVP Builder",
+    "Freelance Software Engineer",
   ],
 
   about: {
     kicker: "01 / About",
     lead: "I work at the intersection of the code and the customer.",
     paragraphs: [
-      "I'm a Full Stack Engineer based in Hyderabad with 2+ years of production experience across FinTech, EdTech, and SaaS. I write Java and Spring Boot for enterprise microservice systems, Node.js and TypeScript for SaaS and startup-scale backends, and React for the front end.",
-      "I've containerised services with Docker, automated mobile releases to the Play Store and App Store via GitHub Actions, and built MCP servers that bridge AI agents with real platform APIs — this portfolio's chat connector is one of them.",
-      "Currently I'm at Kupa Inc, architecting a co-investing platform for high-net-worth investors. On the side I'm building ElevateHub, an AI-first upskilling platform, and preparing deeply on system design and domain-driven design.",
+      "I'm an independent Software Engineer based in Hyderabad with 2+ years of production experience across FinTech, EdTech, and SaaS. I build enterprise microservice backends with Java Full Stack (Spring Boot, Spring Security, PostgreSQL/MySQL), scalable SaaS platforms with the MERN Stack (MongoDB, Express, React, Node/TypeScript), and AI-driven applications with Agentic Frameworks and custom MCP servers.",
+      "I take deep personal interest in freelancing and helping founders turn early ideas into scalable 0-to-1 MVPs — handling system architecture, API design, database schemas, frontend interfaces, and CI/CD deployment pipelines.",
+      "Currently I'm a Full Stack Engineer at Kupa Inc, architecting a co-investing platform for high-net-worth investors, building ElevateHub on the side, and taking select freelance engineering projects for startups.",
     ],
     facts: [
+      { label: "Role", value: "Software Engineer & Freelance MVP Builder" },
       { label: "Now", value: "Full Stack Engineer @ Kupa Inc" },
       { label: "Building", value: "ElevateHub — AI upskilling platform" },
       { label: "Education", value: "B.Tech CSE, Malla Reddy Engineering College" },
-      { label: "Certified", value: "Microsoft Azure Fundamentals (AZ-900)" },
     ],
   },
 
@@ -46,6 +46,7 @@ export const site = {
   social: {
     github: "https://github.com/dsvasudev19",
     linkedin: "https://www.linkedin.com/in/darseshikarivasudev/",
+    instagram: "https://www.instagram.com/ds.vasudev/",
     whatsapp:
       "https://wa.me/+918328203617?text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20services.",
     email: "mailto:vasudevds1729@gmail.com",
