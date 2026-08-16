@@ -414,7 +414,10 @@ body {
 
 .marquee-track {
   display: inline-flex;
+  align-items: center;
   width: max-content;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   animation: marquee 26s linear infinite;
 }
 

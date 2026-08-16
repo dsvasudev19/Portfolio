@@ -16,10 +16,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "mcp-connector",
+    title: "Portfolio MCP Connector",
+    description:
+      "Model Context Protocol (MCP) server exposing profile, experience, projects, skills, and calendar booking as callable tools for AI agents like Claude & ChatGPT.",
+    status: "shipped",
+    coverType: "brand",
+    accent: "lime",
+    tags: ["MCP", "TypeScript", "Node.js", "Claude API", "AI Agent Tools"],
+    featured: true,
+  },
+  {
+    slug: "core-platform",
+    title: "CORE (AI Native Collaborative Organizational Resource Engine)",
+    description:
+      "Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute operations in natural language.",
+    status: "shipped",
+    coverType: "brand",
+    accent: "ink",
+    tags: ["Java", "Spring Boot", "React", "Node.js", "MCP", "DDD"],
+    featured: true,
+  },
+  {
     slug: "elevatehub",
     title: "ElevateHub",
     description:
-      "AI-first upskilling platform connecting trainees and trainers — AI mentorship, RAG-powered Q&A, and a live skill graph.",
+      "AI-native learning management system & AI solutions provider — AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A, and live skill graph.",
     status: "in-development",
     coverType: "brand",
     accent: "lime",
@@ -27,14 +49,25 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "core-platform",
-    title: "CORE Platform",
+    slug: "digischool",
+    title: "DigiSchool Apps",
     description:
-      "Enterprise startup management system built with DDD and microservices — MCP servers let AI agents delegate tasks in natural language.",
+      "Upcoming AI-powered platform for managing whole school operations (staff, students, academics, attendance, and administrative workflows) across 8 microservices.",
     status: "shipped",
     coverType: "brand",
-    accent: "ink",
-    tags: ["Java", "Spring Boot", "React", "Node.js", "MCP", "DDD"],
+    accent: "blue",
+    tags: ["Java", "Spring Boot 3", "React 19", "MySQL", "Multi-tenant SaaS", "AI School Management"],
+    featured: true,
+  },
+  {
+    slug: "kupa-co-investing",
+    title: "Co-Investing Platform",
+    description:
+      "In progress at Kupa Inc — co-investment workflows and real-time portfolio tracking for high-net-worth investors.",
+    status: "in-progress",
+    coverType: "brand",
+    accent: "coral",
+    tags: ["Node.js", "TypeScript", "React", "PostgreSQL", "Docker"],
     featured: true,
   },
   {
@@ -62,31 +95,6 @@ export const projects: Project[] = [
     github: "https://github.com/dsvasudev19/Capstone-Project",
     live: "https://smart-transit.vercel.app/",
     tags: ["Spring Boot", "Microservices", "PostgreSQL", "Docker"],
-    featured: true,
-  },
-  {
-    slug: "playpitch",
-    title: "PlayPitch",
-    description:
-      "Mobile app for finding and booking turfs, organizing tournaments and connecting players.",
-    status: "shipped",
-    coverType: "image",
-    thumbnail:
-      "https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722529/pfb2tzzgjawqhw6diyiq.png",
-    github: "https://github.com/dsvasudev19/TurfSearchApp",
-    live: "https://playpitch.vercel.app/",
-    tags: ["React Native", "Node.js", "MySQL", "Express"],
-    featured: true,
-  },
-  {
-    slug: "digischool",
-    title: "DigiSchool",
-    description:
-      "Multi-tenant SaaS platform digitising school operations end-to-end across 8 independent microservices.",
-    status: "shipped",
-    coverType: "brand",
-    accent: "blue",
-    tags: ["Java", "Spring Boot 3", "React 19", "MySQL", "Multi-tenant SaaS"],
   },
   {
     slug: "vehicle-rental",
@@ -99,16 +107,6 @@ export const projects: Project[] = [
     github: "https://github.com/dsvasudev19/vehicle-rental-system-microservices",
     live: "https://onthego-rentals-dashboard.vercel.app",
     tags: ["Spring Boot", "Angular", "React", "MySQL"],
-  },
-  {
-    slug: "kupa-co-investing",
-    title: "Co-Investing Platform",
-    description:
-      "In progress at Kupa Inc — co-investment workflows and real-time portfolio tracking for high-net-worth investors.",
-    status: "in-progress",
-    coverType: "brand",
-    accent: "coral",
-    tags: ["Node.js", "TypeScript", "React", "PostgreSQL", "Docker"],
   },
   {
     slug: "chatterbox",
@@ -160,29 +158,30 @@ export type ProjectDetail = {
 };
 
 export const projectDetails: Record<string, ProjectDetail> = {
-  elevatehub: {
-    slug: "elevatehub",
-    title: "ElevateHub",
-    subtitle: "AI-First Upskilling Platform Connecting Trainees and Trainers",
-    status: "in-development",
+  "mcp-connector": {
+    slug: "mcp-connector",
+    title: "Portfolio MCP Connector",
+    subtitle: "Model Context Protocol Server for AI Assistant Integration",
+    status: "shipped",
     overview:
-      "ElevateHub is an AI-first platform designed to connect trainees and trainers within organizations. It provides efficient AI exposure, automates mentorship, tracks dynamic skill competencies, and gives trainees practical, industry-ready experience.",
+      "A custom Model Context Protocol (MCP) server that exposes Vasudev's complete engineering profile — work history, projects, skills, system design principles, and live calendar booking — as executable tools for AI agents like Claude and ChatGPT.",
     features: [
-      "AI-assisted coding help and automated feedback loops for trainees",
-      "RAG-powered contextual knowledge base using vector search to answer trainee questions",
-      "Trainee-trainer communication dashboard with real-time feedback and collaboration channels",
-      "Dynamic competency tracking mapping trainee skills to a real-time capability matrix",
+      "16+ custom MCP tools: get_profile, get_projects, get_skills, check_slots, book_appointment",
+      "Connects directly with Claude custom connectors for interactive live Q&A",
+      "Enables AI agents to query experience metrics and schedule meetings dynamically",
+      "Built with TypeScript and Model Context Protocol SDK",
     ],
-    tech: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API", "WebSockets"],
+    tech: ["TypeScript", "Node.js", "Model Context Protocol", "Claude API", "JSON Schema"],
     screenshots: [],
+    live: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector",
   },
   "core-platform": {
     slug: "core-platform",
-    title: "CORE Platform",
+    title: "CORE (AI Native Collaborative Organizational Resource Engine)",
     subtitle: "Enterprise Startup Management System — All Operations, One Interface",
     status: "shipped",
     overview:
-      "A full-scale enterprise management platform built with microservices and Domain-Driven Design to manage every facet of startup operations — employees, projects, Kanban boards, communications, and more — with MCP servers bridging AI agents to platform APIs.",
+      "An AI-native collaborative organizational resource engine built with microservices and Domain-Driven Design to manage every facet of startup operations — employees, projects, Kanban boards, communications, and resource allocation — with MCP servers bridging AI agents to platform APIs.",
     features: [
       "Microservice architecture with Domain-Driven Design for clean bounded contexts",
       "MCP servers bridging AI agents with platform APIs — natural language operations for task delegation",
@@ -192,20 +191,37 @@ export const projectDetails: Record<string, ProjectDetail> = {
     tech: ["Java", "Spring Boot", "React", "Node.js", "MCP", "WebSocket", "Docker", "Socket.IO"],
     screenshots: [],
   },
+  elevatehub: {
+    slug: "elevatehub",
+    title: "ElevateHub",
+    subtitle: "AI Native Learning Management System & AI Solutions Provider",
+    status: "in-development",
+    overview:
+      "ElevateHub is an AI-native learning management system and suite of AI tools (AI Interview Coach, Skill Gap Analyzer, AI Resume Builder) designed to upskill trainees and power training programs within organizations.",
+    features: [
+      "AI Interview Coach: Interactive real-time technical interview practice with automated AI feedback",
+      "Skill Gap Analyzer: Dynamic competency tracking mapping trainee skills to targeted learning paths",
+      "AI Resume Builder: Intelligent resume optimization tailored to specific engineering role criteria",
+      "RAG-powered contextual knowledge base using vector search for instant Q&A",
+      "Trainee-trainer communication dashboard with real-time progress metrics",
+    ],
+    tech: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API", "RAG", "WebSockets"],
+    screenshots: [],
+  },
   digischool: {
     slug: "digischool",
-    title: "DigiSchool",
-    subtitle: "Multi-Tenant SaaS Platform for End-to-End School Operations",
+    title: "DigiSchool Apps",
+    subtitle: "Upcoming AI-Powered Platform for Managing Whole School Operations",
     status: "shipped",
     overview:
-      "A cloud-native multi-tenant SaaS platform with 8 independent microservices handling school operations — attendance, grades, payroll, library, and notifications — serving multiple institutions from a single deployment.",
+      "An upcoming AI-powered platform for managing whole school ecosystems — staff, students, academics, attendance, payroll, and administration — across 8 independent multi-tenant microservices.",
     features: [
+      "Whole-school management covering staff, student profiles, academics, attendance, and payroll",
       "8 independent microservices: attendance, grades, payroll, library, notifications, authentication, reporting, and admin",
+      "AI-driven automated attendance tracking, grade analytics, and report generation",
       "JWT-based stateless authentication with MFA and granular RBAC for 6+ user roles",
-      "Zero privilege escalation incidents since launch",
-      "Automated attendance and grade management with dynamic report card generation and bulk data export",
     ],
-    tech: ["Java", "Spring Boot 3.x", "React 19", "MySQL", "Prometheus", "Grafana", "Loki"],
+    tech: ["Java", "Spring Boot 3.x", "React 19", "MySQL", "Prometheus", "Grafana", "Multi-tenant SaaS"],
     screenshots: [],
   },
   "kupa-co-investing": {
@@ -275,32 +291,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     github: "https://github.com/dsvasudev19/Capstone-Project",
     live: "https://smart-transit.vercel.app/",
   },
-  playpitch: {
-    slug: "playpitch",
-    title: "PlayPitch",
-    subtitle: "Your Ultimate Sports Booking and Networking App",
-    status: "shipped",
-    overview:
-      "An all-in-one mobile application to book sports turfs, organize tournaments, and connect with fellow sports enthusiasts.",
-    features: [
-      "Book turfs for cricket, football, basketball and more",
-      "Create and manage tournaments with real-time schedules",
-      "Connect with players and build your sports network",
-      "Event management with personalized notifications",
-    ],
-    tech: ["React Native", "Node.js", "Express.js", "MySQL", "Sequelize"],
-    screenshots: [
-      "https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722529/pfb2tzzgjawqhw6diyiq.png",
-      "https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722527/uybjh1wuef2ytbgxrfok.jpg",
-      "https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722834/Screenshot_20241209_110733_TurfCare_ynx1qg.jpg",
-      "https://res.cloudinary.com/dxqrg09mq/image/upload/v1733722834/Screenshot_20241209_110746_TurfCare_fxwkzf.jpg",
-    ],
-    github: "https://github.com/dsvasudev19/TurfSearchApp",
-    live: "https://playpitch.vercel.app/",
-  },
   "vehicle-rental": {
     slug: "vehicle-rental",
-    title: "Wheels On Demand",
+    title: "Vehicle Rentals System",
     subtitle: "Comprehensive Vehicle Rental Platform",
     status: "shipped",
     overview:
