@@ -51,6 +51,22 @@ export default function Home() {
         ]
       },
       {
+        "@type": "ProfilePage",
+        "@id": `${site.url}/#profilepage`,
+        "url": site.url,
+        "name": `${site.name} — Full Stack Engineer & Agentic AI Specialist`,
+        "mainEntity": { "@id": `${site.url}/#person` },
+        "hasPart": [
+          {
+            "@type": "WebAPI",
+            "name": "Portfolio MCP Server",
+            "description": "Model Context Protocol endpoint exposing Vasudev's live tools and system context to AI agents",
+            "url": "https://vasudev-claude.vercel.app/claude-connector",
+            "documentation": `${site.url}/llms.txt`
+          }
+        ]
+      },
+      {
         "@type": "ProfessionalService",
         "@id": `${site.url}/#service`,
         "name": site.brand,
