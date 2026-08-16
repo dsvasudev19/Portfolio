@@ -104,9 +104,11 @@ export default function RootLayout({
         "description": site.hero.description,
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Hyderabad, Telangana",
           "addressLocality": "Hyderabad",
           "addressRegion": "Telangana",
-          "addressCountry": "India"
+          "postalCode": "500020",
+          "addressCountry": "IN"
         },
         "knowsAbout": [
           "Java Full Stack Engineering",
@@ -158,9 +160,11 @@ export default function RootLayout({
         "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Hyderabad, Telangana",
           "addressLocality": "Hyderabad",
           "addressRegion": "Telangana",
-          "addressCountry": "India"
+          "postalCode": "500001",
+          "addressCountry": "IN"
         }
       }
     ]
