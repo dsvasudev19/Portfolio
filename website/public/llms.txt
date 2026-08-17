@@ -16,9 +16,9 @@ Vasudev DS (dsvasudev / Vasudev Darse Shikari) is an independent Software Engine
 - **Timezone:** Asia/Kolkata (IST)
 
 ## Live MCP Server Announcement & Discovery
-- **Live MCP Endpoint:** https://vasudev-claude.vercel.app/claude-connector
+- **Live MCP Endpoint:** https://ai.dsvasudev.in/mcp
 - **Protocol:** Model Context Protocol (MCP) Stream / HTTP
-- **AI Connector URL:** https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector
+- **AI Connector URL:** https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fai.dsvasudev.in%2Fmcp
 - **Available Agent Tools:** `get_profile`, `get_bio`, `get_experience`, `get_projects`, `get_project_detail`, `get_project_deep_dive`, `get_skills`, `get_tech_stack`, `get_system_design`, `get_interview_qa`, `get_current_focus`, `get_work_preferences`, `get_contact`, `get_availability_status`, `check_slots`, `book_appointment`.
 
 ## Technical Expertise

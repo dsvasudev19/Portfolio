@@ -207,7 +207,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     tech: ["TypeScript", "Node.js", "Model Context Protocol", "Claude API", "JSON Schema"],
     screenshots: [],
-    live: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector",
+    live: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fai.dsvasudev.in%2Fmcp",
   },
   digischool: {
     slug: "digischool",
