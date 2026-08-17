@@ -213,7 +213,7 @@ export default function RootLayout({
             "@type": "WebAPI",
             "name": "Portfolio MCP Server",
             "description": "Model Context Protocol endpoint exposing Vasudev's live tools and system context to AI agents",
-            "url": "https://vasudev-claude.vercel.app/claude-connector",
+            "url": "https://ai.dsvasudev.in/mcp",
             "documentation": `${site.url}/llms.txt`
           }
         ]

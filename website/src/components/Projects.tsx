@@ -39,8 +39,8 @@ function ProjectCard({
   return (
     <article
       className={`card-b group flex h-full flex-col overflow-hidden ${clickable ? "cursor-pointer" : ""}`}
-      role={clickable ? "link" : undefined}
       tabIndex={clickable ? 0 : undefined}
+      aria-label={clickable ? `View details for ${project.title}` : undefined}
       data-cursor-hover={clickable ? true : undefined}
       onClick={() => project.slug && router.push(`/projects/${project.slug}`)}
       onKeyDown={(e) => {

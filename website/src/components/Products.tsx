@@ -19,8 +19,8 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <article
       className="card-b group flex h-full cursor-pointer flex-col p-7"
-      role="link"
       tabIndex={0}
+      aria-label={`View details for ${product.title}`}
       data-cursor-hover
       onClick={() => router.push(`/solutions/${product.slug}`)}
       onKeyDown={(e) => {

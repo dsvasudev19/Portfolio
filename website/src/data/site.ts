@@ -68,7 +68,7 @@ export const site = {
 
 export const mcp = {
   name: "Vasudev MCP",
-  url: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector",
+  url: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fai.dsvasudev.in%2Fmcp",
   tagline: "Talk to my profile through the Model Context Protocol",
   description:
     "A custom Model Context Protocol (MCP) server exposing my engineering profile, system design principles, and live calendar booking as callable tools for AI agents like Claude & ChatGPT.",

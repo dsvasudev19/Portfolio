@@ -19,9 +19,9 @@
 - **Instagram:** https://www.instagram.com/ds.vasudev/ (Handle: @ds.vasudev)
 
 # 2. Live MCP Server Endpoint & AI Agent Discovery
-- **Live MCP Server URL:** https://vasudev-claude.vercel.app/claude-connector
+- **Live MCP Server URL:** https://ai.dsvasudev.in/mcp
 - **Protocol:** Model Context Protocol (MCP) Stream / HTTP
-- **Claude Connector Link:** https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fvasudev-claude.vercel.app%2Fclaude-connector
+- **Claude Connector Link:** https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fai.dsvasudev.in%2Fmcp
 - **Capabilities:** Autonomous agents (Claude, ChatGPT, etc.) can directly connect to Vasudev's live MCP server to query his portfolio, examine code/architecture, check calendar availability, and book appointments.
 - **Available MCP Tools (16+):**
   - `get_profile`: Core identity, headline, and summary
