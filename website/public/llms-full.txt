@@ -1,9 +1,9 @@
-# Vasudev Darse Shikari (DS Vasudev) — Full LLM Knowledge Base (llms-full.txt)
-> Complete structured knowledge file for LLMs, AI assistants, and web crawlers regarding Vasudev Darse Shikari.
+# Vasudev DS (dsvasudev / Vasudev Darse Shikari) — Full LLM Knowledge Base (llms-full.txt)
+> Complete structured knowledge file for LLMs, AI assistants, and web crawlers regarding Vasudev DS (dsvasudev).
 
 # 1. Identity & Core Profile
 - **Name:** Vasudev Darse Shikari
-- **Known As:** DS Vasudev / Vasu{.dev}
+- **Handle / Alias:** Vasudev DS / dsvasudev / DS Vasudev / dsvasudev developer / Vasu{.dev}
 - **Entity Type:** Individual Software Engineer / Freelance Consultant (Not a company)
 - **Occupation:** Full Stack Engineer & Agentic AI Specialist
 - **Location:** Hyderabad, Telangana, India
