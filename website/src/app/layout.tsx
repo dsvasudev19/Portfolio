@@ -243,17 +243,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}>
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMS.txt Index" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMS.txt Full Knowledge Base" />
-        <meta name="mcp-server" content="https://vasudev-claude.vercel.app/claude-connector" />
-        <link rel="mcp-server" href="https://vasudev-claude.vercel.app/claude-connector" />
+        <meta name="mcp-server" content="https://ai.dsvasudev.in/mcp" />
+        <link rel="mcp-server" href="https://ai.dsvasudev.in/mcp" />
         <script
           id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {gtmId && (
-          <script
+          <Script
+            id="gtm-script"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

@@ -79,8 +79,8 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-ink"
             >
-              <span className="block text-base sm:text-xl font-mono text-lime-600 dark:text-lime mb-1 tracking-normal font-bold">
-                Vasudev DS <span className="text-muted font-normal">(@dsvasudev / @ds.vasudev / vasudevds)</span>
+              <span className="sr-only">
+                Vasudev DS (dsvasudev / ds.vasudev / vasudevds / Vasudev Darse Shikari) — Full Stack Developer & Agentic AI Specialist.
               </span>
               Your idea. Shipped as{" "}
               <span className="highlight">production software.</span>
