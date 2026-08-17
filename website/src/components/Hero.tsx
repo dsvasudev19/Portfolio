@@ -80,7 +80,7 @@ export function Hero() {
               className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-ink"
             >
               <span className="sr-only">
-                Vasudev DS (dsvasudev / ds.vasudev / vasudevds / Vasudev Darse Shikari) — Full Stack Developer & Agentic AI Specialist.
+                Vasudev DS — Full Stack Developer & Agentic AI Specialist.
               </span>
               Your idea. Shipped as{" "}
               <span className="highlight">production software.</span>

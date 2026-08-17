@@ -10,11 +10,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Vasudev DS (dsvasudev / vasudevds / ds.vasudev) — Full Stack Developer & Agentic AI Specialist | Vasu{.dev}",
-    template: "%s | Vasudev DS (dsvasudev)",
+    default: "Vasudev DS — Full Stack Developer & Agentic AI Specialist | Vasu{.dev}",
+    template: "%s | Vasudev DS",
   },
   description:
-    "Official portfolio of Vasudev DS (dsvasudev / vasudevds / ds.vasudev / Vasudev Darse Shikari) — Full Stack Developer & Agentic AI Specialist. Expert in Java Spring Boot, Node.js, TypeScript, React, Next.js, and custom Model Context Protocol (MCP) servers.",
+    "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
   keywords: [
     "Vasudev DS",
     "dsvasudev",
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     "EV charging station software",
     "Co-investing platform"
   ],
-  authors: [{ name: "Vasudev DS (dsvasudev / vasudevds / ds.vasudev / Vasudev Darse Shikari)", url: site.url }],
-  creator: "Vasudev DS (dsvasudev)",
-  publisher: "Vasudev DS (dsvasudev)",
+  authors: [{ name: "Vasudev DS", url: site.url }],
+  creator: "Vasudev DS",
+  publisher: "Vasudev DS",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -84,24 +84,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: site.url,
-    title: "Vasudev DS (dsvasudev / vasudevds / ds.vasudev) — Full Stack Developer & Agentic AI Specialist",
+    title: "Vasudev DS — Full Stack Developer & Agentic AI Specialist",
     description:
-      "Official portfolio of Vasudev DS (dsvasudev / vasudevds / ds.vasudev / Vasudev Darse Shikari) — Full Stack Developer & Agentic AI Specialist. Custom MCP servers, Java Spring Boot, Node.js, React, Next.js, and scalable cloud architectures.",
-    siteName: "dsvasudev | Vasudev DS",
+      "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
+    siteName: "Vasudev DS | Vasu{.dev}",
     images: [
       {
         url: "/assets/author.png",
         width: 1200,
         height: 630,
-        alt: "Vasudev DS (dsvasudev / vasudevds / ds.vasudev) — Full Stack Developer & Agentic AI Specialist",
+        alt: "Vasudev DS — Full Stack Developer & Agentic AI Specialist",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vasudev DS (dsvasudev / vasudevds / ds.vasudev) — Full Stack Developer & Agentic AI Specialist",
+    title: "Vasudev DS — Full Stack Developer & Agentic AI Specialist",
     description:
-      "Official portfolio of Vasudev DS (dsvasudev / vasudevds / ds.vasudev / Vasudev Darse Shikari) — Full Stack Developer & Agentic AI Specialist. Custom MCP servers, Java Spring Boot, Node.js, React, Next.js.",
+      "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
     images: ["/assets/author.png"],
     creator: "@dsvasudev19",
   },
@@ -206,7 +206,7 @@ export default function RootLayout({
         "@type": "ProfilePage",
         "@id": `${site.url}/#profilepage`,
         "url": site.url,
-        "name": `Vasudev DS (dsvasudev) — Full Stack Engineer & Agentic AI Specialist`,
+        "name": `Vasudev DS — Full Stack Engineer & Agentic AI Specialist`,
         "mainEntity": { "@id": `${site.url}/#person` },
         "hasPart": [
           {
@@ -225,7 +225,7 @@ export default function RootLayout({
         "url": site.url,
         "logo": `${site.url}/assets/author.png`,
         "image": `${site.url}/assets/author.png`,
-        "description": "Custom full-stack web and mobile development, microservice systems design, and Agentic AI integrations / MCP server construction by Vasudev DS (dsvasudev).",
+        "description": "Custom full-stack web and mobile development, microservice systems design, and Agentic AI integrations / MCP server construction by Vasudev DS.",
         "telephone": site.contact.phone,
         "priceRange": "$$$",
         "address": {
