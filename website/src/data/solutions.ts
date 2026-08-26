@@ -177,8 +177,8 @@ export const products: Product[] = [
   },
   {
     slug: "elevatehub",
-    title: "ElevateHub",
-    status: "In Development",
+    title: "ElevateHub (Astravora)",
+    status: "Available",
     tagline: "A single platform for training institutions to manage trainees, trainers, and AI-assisted upskilling.",
     includes: [
       "Trainee & trainer management",
@@ -186,7 +186,7 @@ export const products: Product[] = [
       "RAG-powered knowledge base for trainee questions",
       "Real-time skill graph & competency tracking",
     ],
-    cta: "Get in Touch",
+    cta: "Get a Quote",
     accent: "lime",
     problem:
       "Training institutions juggle attendance sheets, scattered feedback, and no real way to track whether a trainee's skills are actually improving. ElevateHub gives trainers and trainees one shared platform — with AI doing the busywork.",
