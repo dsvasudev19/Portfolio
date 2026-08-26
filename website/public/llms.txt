@@ -34,8 +34,8 @@ Vasudev DS (dsvasudev / Vasudev Darse Shikari) is an independent Software Engine
 - **Full Stack Web & Mobile Development:** Creating responsive React / Next.js web applications and cross-platform React Native apps.
 
 ## Key Projects
-1. **ElevateHub:** AI-native learning management system & AI solutions suite — AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG vector Q&A engine, and real-time trainee skill graph.
-2. **CORE (AI Native Collaborative Organizational Resource Engine):** Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute platform actions in natural language.
+1. **ElevateHub (Astravora):** AI-native learning management system & AI solutions suite — AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG vector Q&A engine, and real-time trainee skill graph. Live: [https://astravora.in](https://astravora.in) | Repo: [https://github.com/Tech-by-Vasu/Edu-Tech-Platform](https://github.com/Tech-by-Vasu/Edu-Tech-Platform)
+2. **CORE (AI Native Collaborative Organizational Resource Engine):** Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute platform actions in natural language. Live: [https://core.dsvasudev.in](https://core.dsvasudev.in) | Repo: [https://github.com/dsvasudev19/CORE](https://github.com/dsvasudev19/CORE)
 3. **Portfolio MCP Connector:** Model Context Protocol (MCP) server exposing profile, projects, skills, system design, and calendar booking as callable tools for AI agents like Claude & ChatGPT.
 4. **DigiSchool Apps:** Upcoming AI-powered platform for managing whole school operations (staff, students, academics, attendance, and administrative workflows) across 8 microservices.
 5. **Co-Investing Platform (Kupa Inc):** Co-investment workflows and real-time portfolio tracking for high-net-worth investors across multiple asset classes.

@@ -32,7 +32,7 @@ export const site = {
     facts: [
       { label: "ROLE", value: "Full-Stack Engineer" },
       { label: "NOW", value: "Kupa Inc" },
-      { label: "BUILDING", value: "ElevateHub" },
+      { label: "BUILDING", value: "DigiSchool Apps" },
       { label: "EDUCATION", value: "B.Tech CSE" },
     ],
   },

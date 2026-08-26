@@ -50,8 +50,8 @@ Vasudev Darse Shikari is a Full Stack Engineer based in Hyderabad with 2+ years 
 5. **Freelance Engineering:** Available for full-stack contract work, technical advisory, and custom AI integrations.
 
 # 4. Key Projects Portfolio (Ordered)
-1. **ElevateHub:** AI-native learning management system & AI solutions provider featuring AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A, and live skill graph.
-2. **CORE (AI Native Collaborative Organizational Resource Engine):** Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute operations in natural language.
+1. **ElevateHub (Astravora):** AI-native learning management system & AI solutions provider featuring AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A, and live skill graph. Live: https://astravora.in | Repository: https://github.com/Tech-by-Vasu/Edu-Tech-Platform
+2. **CORE (AI Native Collaborative Organizational Resource Engine):** Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute operations in natural language. Live: https://core.dsvasudev.in | Repository: https://github.com/dsvasudev19/CORE
 3. **Portfolio MCP Connector:** Model Context Protocol (MCP) server exposing profile, projects, skills, system design, and appointment booking as callable tools for AI agents like Claude & ChatGPT.
 4. **DigiSchool Apps:** Upcoming AI-powered platform for managing whole school operations (staff, students, academics, attendance, and administrative workflows) across 8 microservices.
 5. **Co-Investing Platform (Kupa Inc):** Co-investment workflows and real-time portfolio tracking for high-net-worth investors across multiple asset classes.

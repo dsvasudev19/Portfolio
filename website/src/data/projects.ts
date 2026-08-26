@@ -17,12 +17,14 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "elevatehub",
-    title: "ElevateHub",
+    title: "ElevateHub (Astravora)",
     description:
       "AI-native learning management system & AI solutions suite featuring an AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A engine, and real-time trainee skill graph.",
-    status: "in-development",
+    status: "shipped",
     coverType: "brand",
     accent: "lime",
+    github: "https://github.com/Tech-by-Vasu/Edu-Tech-Platform",
+    live: "https://astravora.in",
     tags: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API", "RAG Engine", "WebSockets"],
     featured: true,
   },
@@ -34,6 +36,8 @@ export const projects: Project[] = [
     status: "shipped",
     coverType: "brand",
     accent: "ink",
+    github: "https://github.com/dsvasudev19/CORE",
+    live: "https://core.dsvasudev.in",
     tags: ["Java", "Spring Boot", "React", "Node.js", "MCP", "DDD"],
     featured: true,
   },
@@ -160,21 +164,23 @@ export type ProjectDetail = {
 export const projectDetails: Record<string, ProjectDetail> = {
   elevatehub: {
     slug: "elevatehub",
-    title: "ElevateHub",
-    subtitle: "AI Native Learning Management System & AI Solutions Provider",
-    status: "in-development",
+    title: "ElevateHub (Astravora)",
+    subtitle: "AI Native Learning Management System & Enterprise Solutions Suite",
+    status: "shipped",
     overview:
-      "ElevateHub is an enterprise AI-native learning management system and solutions suite designed to upskill trainees and power training programs within organizations through autonomous AI coaching, automated gap analysis, and vector-search Q&A engines.",
+      "ElevateHub (Astravora) is an enterprise AI-native learning management system and solutions suite designed to upskill trainees and power training programs within organizations through autonomous AI coaching, automated gap analysis, vector-search Q&A engines, and multi-tenant management portals.",
     features: [
       "AI Interview Coach: Interactive real-time technical interview practice with automated AI evaluation & speech feedback",
       "Skill Gap Analyzer: Dynamic competency tracking mapping trainee skills to targeted learning paths",
-      "AI Resume Builder: Intelligent resume optimization tailored to specific engineering role criteria",
+      "AI Resume Builder: Intelligent resume optimization tailored to specific engineering role criteria (resume.astravora.in)",
       "RAG Knowledge Engine: Contextual vector search knowledge base using OpenAI embeddings for instant Q&A",
       "Live Trainee Skill Graph: Real-time progress dashboard tracking competency metrics across cohorts",
-      "Multi-Role Dashboard: Dedicated interfaces for trainees, trainers, and organization admins",
+      "Multi-Role Dashboard: Dedicated interfaces for learners (learner.astravora.in), instructors (instructor.astravora.in), and system admins (admin.astravora.in)",
     ],
     tech: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React 19", "OpenAI API", "RAG Engine", "Vector DB", "WebSockets"],
     screenshots: [],
+    github: "https://github.com/Tech-by-Vasu/Edu-Tech-Platform",
+    live: "https://astravora.in",
   },
   "core-platform": {
     slug: "core-platform",
@@ -182,15 +188,18 @@ export const projectDetails: Record<string, ProjectDetail> = {
     subtitle: "Enterprise Startup Management System — All Operations, One Interface",
     status: "shipped",
     overview:
-      "An AI-native collaborative organizational resource engine built with microservices and Domain-Driven Design to manage every facet of startup operations — employees, projects, Kanban boards, communications, and resource allocation — with MCP servers bridging AI agents to platform APIs.",
+      "An AI-native collaborative organizational resource engine built with microservices and Domain-Driven Design to manage every facet of startup operations — employees, projects, Kanban boards, communications, and resource allocation — with live webapp and MCP servers bridging AI agents to platform APIs.",
     features: [
-      "Microservice architecture with Domain-Driven Design for clean bounded contexts",
+      "Microservice architecture with Domain-Driven Design for clean bounded contexts across core operations",
       "MCP servers bridging AI agents with platform APIs — natural language operations for task delegation",
+      "Centralized Web App (app.core.dsvasudev.in) and interactive documentation portal (docs.core.dsvasudev.in)",
       "Automated sprint planning and resource allocation through AI agent integration — 40% reduction in admin overhead",
       "Real-time WebSocket messaging using Node.js and Socket.IO with sub-100ms latency for cross-team collaboration",
     ],
     tech: ["Java", "Spring Boot", "React", "Node.js", "MCP", "WebSocket", "Docker", "Socket.IO"],
     screenshots: [],
+    github: "https://github.com/dsvasudev19/CORE",
+    live: "https://core.dsvasudev.in",
   },
   "mcp-connector": {
     slug: "mcp-connector",
