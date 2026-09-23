@@ -32,45 +32,47 @@ export function Skills() {
         />
       </div>
 
-      {/* Marquee Track — quieter, single-line credential strip */}
+      {/* Marquee Track */}
       <div className="relative mb-12">
         <Marquee speed={32}>
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="mx-2.5 my-1 flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2"
+              className="border-b2-invert mx-2.5 my-1 flex items-center gap-2.5 rounded-full bg-ink-soft px-4 py-2"
             >
-              <div className="relative h-5 w-5 shrink-0 opacity-90">
+              <div className="relative h-5 w-5 shrink-0">
                 <Image src={skill.icon} alt={skill.name} fill className="object-contain" unoptimized />
               </div>
-              <span className="whitespace-nowrap text-sm font-semibold text-cream/85">{skill.name}</span>
+              <span className="whitespace-nowrap text-sm font-bold text-cream">{skill.name}</span>
             </div>
           ))}
         </Marquee>
       </div>
 
-      {/* Categorized expertise — a single quiet panel, spec-sheet style */}
+      {/* Categorized expertise — on-brand card, calmer than a full chip grid */}
       <div className="container-b relative">
         <Reveal variant="up">
-          <div className="divide-y divide-white/10 rounded-2xl border border-white/12 bg-white/[0.025]">
+          <div className="border-b2-invert shadow-b-lime divide-y divide-white/10 rounded-2xl bg-ink-soft p-6 sm:p-8">
             {visibleGroups.map((group) => (
               <div
                 key={group.key}
-                className={`grid grid-cols-1 gap-1.5 px-6 py-5 sm:grid-cols-[190px_1fr] sm:gap-6 sm:py-6 ${
-                  group.highlight ? "bg-lime/[0.05]" : ""
-                }`}
+                className="grid grid-cols-1 gap-3 py-5 first:pt-0 last:pb-0 sm:grid-cols-[190px_1fr] sm:gap-6"
               >
                 <p className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-lime">
                   {group.label}
                   {group.highlight && (
-                    <span className="rounded-full bg-lime/15 px-2 py-0.5 text-[9px] font-bold tracking-wider text-lime">
+                    <span className="rounded-full bg-lime px-2 py-0.5 text-[9px] font-bold tracking-wider text-ink">
                       CORE
                     </span>
                   )}
                 </p>
-                <p className="text-sm leading-relaxed font-medium text-muted-invert sm:text-[15px]">
-                  {group.items.join("  ·  ")}
-                </p>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span key={item} className="tag-b tag-b-invert">
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
