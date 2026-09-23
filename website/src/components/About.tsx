@@ -17,14 +17,19 @@ export function About() {
           <h2 className="text-h1 max-w-3xl text-balance">{site.about.lead}</h2>
         </Reveal>
 
-        {/* Primary Stat Cards Grid */}
+        {/* Compact Fact Line (was a 4-box stat grid — merged into one row, Hero already carries the headline stats) */}
         <Reveal variant="scale" delay={120}>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {site.about.facts.map((fact) => (
-              <div key={fact.label} className="border-b2 shadow-b-invert rounded-2xl bg-white/5 p-5 border border-white/15">
-                <p className="text-xs font-mono font-bold tracking-wider text-lime uppercase">{fact.label}</p>
-                <p className="mt-1.5 text-lg sm:text-xl font-extrabold text-cream tracking-tight">{fact.value}</p>
-              </div>
+          <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-2 font-mono text-sm">
+            {site.about.facts.map((fact, i) => (
+              <span key={fact.label} className="flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-lime">{fact.label}</span>
+                <span className="font-bold text-cream">{fact.value}</span>
+                {i < site.about.facts.length - 1 && (
+                  <span className="ml-1.5 text-white/20" aria-hidden>
+                    /
+                  </span>
+                )}
+              </span>
             ))}
           </div>
         </Reveal>
