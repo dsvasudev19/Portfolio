@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { mcp } from "@/data/site";
 import { Reveal } from "./Reveal";
 
+const DEFAULT_VISIBLE_TOOLS = 8;
+
 const conversation = [
   { role: "user", text: "What is Vasudev working on right now?" },
   { role: "tool", text: "get_current_focus()" },
@@ -70,6 +72,10 @@ function TerminalPanel() {
 }
 
 export function AgenticAI() {
+  const [showAllTools, setShowAllTools] = useState(false);
+  const visibleTools = showAllTools ? mcp.tools : mcp.tools.slice(0, DEFAULT_VISIBLE_TOOLS);
+  const hiddenToolCount = mcp.tools.length - DEFAULT_VISIBLE_TOOLS;
+
   return (
     <section id="agentic-ai" className="section-pad relative overflow-hidden py-12 sm:py-16">
       <div className="container-b relative">
@@ -119,7 +125,7 @@ export function AgenticAI() {
                   <span className="text-[11px] font-mono text-muted">Model Context Protocol</span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5">
-                  {mcp.tools.map((tool) => (
+                  {visibleTools.map((tool) => (
                     <span
                       key={tool.name}
                       title={tool.description}
@@ -129,6 +135,16 @@ export function AgenticAI() {
                     </span>
                   ))}
                 </div>
+                {hiddenToolCount > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllTools((v) => !v)}
+                    className="mt-2.5 text-[11px] font-bold text-muted hover:text-ink transition-colors"
+                    data-cursor-hover
+                  >
+                    {showAllTools ? "Show fewer tools ↑" : `+${hiddenToolCount} more tools →`}
+                  </button>
+                )}
               </div>
             </Reveal>
           </div>

@@ -138,15 +138,33 @@ export const skillGroups = [
   {
     key: "agentic",
     label: "AI & Agentic Stack",
+    highlight: true,
     items: [
       "Model Context Protocol",
       "Claude / Anthropic API",
       "OpenAI API",
+      "LangChain",
+      "LangGraph",
       "Agentic Workflows",
       "Tool Calling",
       "RAG & Vector Search",
       "Prompt Engineering",
       "LLM Orchestration",
+    ],
+  },
+  {
+    key: "concepts",
+    label: "Architecture & Concepts",
+    highlight: true,
+    items: [
+      "Domain-Driven Design",
+      "Microservice Architecture",
+      "Multi-tenant SaaS",
+      "System Design (HLD + LLD)",
+      "RBAC",
+      "JWT Auth",
+      "Event-Driven Architecture",
+      "Idempotent Payments",
     ],
   },
   {
@@ -179,20 +197,6 @@ export const skillGroups = [
     label: "Observability",
     items: ["Prometheus", "Grafana", "Loki"],
   },
-  {
-    key: "concepts",
-    label: "Architecture & Concepts",
-    items: [
-      "Domain-Driven Design",
-      "Microservice Architecture",
-      "Multi-tenant SaaS",
-      "System Design (HLD + LLD)",
-      "RBAC",
-      "JWT Auth",
-      "Event-Driven Architecture",
-      "Idempotent Payments",
-    ],
-  },
 ];
 
 export const skills = [
@@ -219,7 +223,6 @@ export const experience = [
     summary:
       "Architecting a Co-Investing platform for high-net-worth investors — co-investment workflows, real-time portfolio tracking, and third-party financial integrations.",
     highlights: [
-      "Architecting a Co-Investing platform using Node.js and TypeScript to support co-investment workflows and real-time portfolio tracking across multiple asset classes",
       "Designing and delivering scalable RESTful APIs managing secure financial data flows, investment transactions, and real-time portfolio updates with strict data integrity guarantees",
       "Automated mobile release pipelines to Google Play Store and Apple App Store via GitHub Actions CI/CD — reducing manual deployment effort by 80% and achieving consistent release cycles",
     ],
@@ -236,7 +239,6 @@ export const experience = [
     highlights: [
       "Engineered a low-code application framework using JSON-based configuration structures — reducing development time by 25% and eliminating significant boilerplate across enterprise projects",
       "Built and deployed MCP servers integrated with GitHub Copilot, enabling AI-assisted development workflows that reduced coding errors by 15% and accelerated feature delivery",
-      "Developed RESTful APIs and Spring Boot microservices handling 1,000+ daily requests with 100% data integrity and optimised query execution",
     ],
     stack: ["Java", "Spring Boot", "Angular", "REST APIs", "Microservices", "MCP", "GitHub Copilot"],
     accent: "blue" as const,
@@ -251,7 +253,6 @@ export const experience = [
     highlights: [
       "Led end-to-end development of an EV charge station management system using Node.js and React — enabling real-time charger monitoring, session tracking, and transaction management across 50+ stations",
       "Built a secure MERN-stack application with multi-layered JWT authentication and RBAC, protecting sensitive user data for 500+ users with zero breaches over 12 months",
-      "Delivered customisable CMS solutions using React and MongoDB with modular component architecture — improving internal content publishing speed by 40%",
     ],
     stack: ["Node.js", "React", "MongoDB", "MySQL", "Express.js", "JWT", "React Native"],
     accent: "coral" as const,

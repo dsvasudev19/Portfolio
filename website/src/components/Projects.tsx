@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { projects, type Project } from "@/data/projects";
@@ -124,9 +125,11 @@ function ProjectCard({
 }
 
 export function Projects() {
+  const [showAll, setShowAll] = useState(false);
   const featured = projects.filter((p) => p.featured);
   const other = projects.filter((p) => !p.featured);
   const [hero, second, third, ...nextFour] = featured;
+  const hiddenCount = nextFour.length + other.length;
 
   return (
     <section id="works" className="section-pad">
@@ -160,30 +163,47 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Next 4 Featured Cards (Direct continuous grid flow) */}
-        {nextFour.length > 0 && (
-          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {nextFour.map((p, i) => (
-              <Reveal key={p.title} delay={i * 80}>
-                <ProjectCard project={p} variant="grid" />
-              </Reveal>
-            ))}
-          </div>
+        {showAll && (
+          <>
+            {/* Next 4 Featured Cards (Direct continuous grid flow) */}
+            {nextFour.length > 0 && (
+              <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {nextFour.map((p, i) => (
+                  <Reveal key={p.title} delay={i * 80}>
+                    <ProjectCard project={p} variant="grid" />
+                  </Reveal>
+                ))}
+              </div>
+            )}
+
+            {/* Additional Projects (If Any) */}
+            {other.length > 0 && (
+              <div className="mt-12">
+                <Reveal>
+                  <p className="eyebrow mb-4">Additional Archives</p>
+                </Reveal>
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {other.map((p, i) => (
+                    <Reveal key={p.title} delay={i * 60}>
+                      <ProjectCard project={p} variant="standard" />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
 
-        {/* Additional Projects (If Any) */}
-        {other.length > 0 && (
-          <div className="mt-12">
-            <Reveal>
-              <p className="eyebrow mb-4">Additional Archives</p>
-            </Reveal>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {other.map((p, i) => (
-                <Reveal key={p.title} delay={i * 60}>
-                  <ProjectCard project={p} variant="standard" />
-                </Reveal>
-              ))}
-            </div>
+        {hiddenCount > 0 && (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              className="btn btn-ghost btn-sm"
+              data-cursor-hover
+            >
+              {showAll ? "Show fewer projects" : `View all projects (+${hiddenCount})`}
+            </button>
           </div>
         )}
       </div>

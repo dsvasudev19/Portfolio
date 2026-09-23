@@ -38,7 +38,7 @@ export const projects: Project[] = [
     accent: "ink",
     github: "https://github.com/dsvasudev19/CORE",
     live: "https://core.dsvasudev.in",
-    tags: ["Java", "Spring Boot", "React", "Node.js", "MCP", "DDD"],
+    tags: ["Java", "Spring Boot", "React", "Node.js", "MCP", "LangGraph", "DDD"],
     featured: true,
   },
   {
@@ -191,12 +191,12 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "An AI-native collaborative organizational resource engine built with microservices and Domain-Driven Design to manage every facet of startup operations — employees, projects, Kanban boards, communications, and resource allocation — with live webapp and MCP servers bridging AI agents to platform APIs.",
     features: [
       "Microservice architecture with Domain-Driven Design for clean bounded contexts across core operations",
-      "MCP servers bridging AI agents with platform APIs — natural language operations for task delegation",
+      "MCP servers bridging AI agents with platform APIs — LangChain/LangGraph-orchestrated multi-step agent workflows for natural language task delegation",
       "Centralized Web App (app.core.dsvasudev.in) and interactive documentation portal (docs.core.dsvasudev.in)",
       "Automated sprint planning and resource allocation through AI agent integration — 40% reduction in admin overhead",
       "Real-time WebSocket messaging using Node.js and Socket.IO with sub-100ms latency for cross-team collaboration",
     ],
-    tech: ["Java", "Spring Boot", "React", "Node.js", "MCP", "WebSocket", "Docker", "Socket.IO"],
+    tech: ["Java", "Spring Boot", "React", "Node.js", "MCP", "LangChain", "LangGraph", "WebSocket", "Docker", "Socket.IO"],
     screenshots: [],
     github: "https://github.com/dsvasudev19/CORE",
     live: "https://core.dsvasudev.in",
