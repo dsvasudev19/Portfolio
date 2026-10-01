@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { ScrollProgress } from "@/components/ScrollProgress";
-import { CustomCursor } from "@/components/CustomCursor";
+import { ClassicChrome } from "@/components/ClassicChrome";
 import Script from "next/script";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -280,8 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             />
           </noscript>
         )}
-        <ScrollProgress />
-        <CustomCursor />
+        <ClassicChrome />
         {children}
       </body>
     </html>

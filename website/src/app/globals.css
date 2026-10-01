@@ -592,3 +592,21 @@ body {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0 0 var(--lime);
 }
+
+/* ── /v2 theme tokens (Tailwind utilities: bg-mu-*, text-mu-*, border-mu-*) ── */
+@theme inline {
+  --color-mu-bg: #f6f5f1;
+  --color-mu-surface: #ffffff;
+  --color-mu-ink: #0e1424;
+  --color-mu-body: #3a4256;
+  --color-mu-muted: #667085;
+  --color-mu-line: #e4e2da;
+  --color-mu-accent: #4f46e5;
+  --color-mu-accent-soft: #eceafd;
+  --color-mu-navy: #0e1424;
+  --color-mu-navy-2: #172038;
+  --color-mu-peach: #ffdccb;
+  --color-mu-lilac: #ddd8ff;
+  --color-mu-sky: #d3e8ff;
+  --color-mu-mint: #d4f1e4;
+}
