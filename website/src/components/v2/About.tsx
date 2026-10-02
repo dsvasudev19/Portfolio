@@ -1,11 +1,12 @@
+import { mcp } from "@/data/site";
 import { CountUp, Words } from "./motion";
 import { Reveal } from "./Reveal";
 import { container, eyebrow, section } from "./ui";
 
 const facts = [
-  { to: 11, suffix: "+", label: "products built and launched" },
+  { to: 11, suffix: "+", label: "systems built and deployed" },
   { to: 3, suffix: "", label: "companies I've worked with" },
-  { to: 50, suffix: "+", label: "EV charging stations running on my software" },
+  { to: mcp.tools.length, suffix: "", label: "AI tools in my live MCP connector" },
 ];
 
 export function About() {

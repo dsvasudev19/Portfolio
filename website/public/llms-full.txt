@@ -76,3 +76,20 @@ Vasudev Darse Shikari is a Full Stack Engineer based in Hyderabad with 2+ years 
 2. **Agentic AI & Custom MCP Integration:** Building custom Model Context Protocol (MCP) servers allowing Claude, ChatGPT, or autonomous AI agents to interact with production tools and APIs.
 3. **Enterprise Microservices Engineering:** Java/Spring Boot microservices, high-throughput REST APIs, multi-tenant database schema design, and Dockerized deployments.
 4. **AI-Powered School & EdTech Solutions:** AI-driven LMS, interview coaching engines, skill gap analytics, and school management platforms.
+
+## Site Pages
+- [Project: elevatehub](https://dsvasudev.in/projects/elevatehub)
+- [Project: core-platform](https://dsvasudev.in/projects/core-platform)
+- [Project: mcp-connector](https://dsvasudev.in/projects/mcp-connector)
+- [Project: digischool](https://dsvasudev.in/projects/digischool)
+- [Project: kupa-co-investing](https://dsvasudev.in/projects/kupa-co-investing)
+- [Project: projexpert](https://dsvasudev.in/projects/projexpert)
+- [Project: smarttransit](https://dsvasudev.in/projects/smarttransit)
+- [Project: vehicle-rental](https://dsvasudev.in/projects/vehicle-rental)
+- [Project: chatterbox](https://dsvasudev.in/projects/chatterbox)
+- [Solution: core](https://dsvasudev.in/solutions/core)
+- [Solution: opshub](https://dsvasudev.in/solutions/opshub)
+- [Solution: elevatehub](https://dsvasudev.in/solutions/elevatehub)
+- [Solution: digischool](https://dsvasudev.in/solutions/digischool)
+- [Sitemap](https://dsvasudev.in/sitemap.xml)
+- [robots.txt](https://dsvasudev.in/robots.txt)

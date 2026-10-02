@@ -61,7 +61,7 @@ function Cover({ p, i }: { p: Project; i: number }) {
 function Card({ p, i, className }: { p: Project; i: number; className: string }) {
   const num = String(i + 1).padStart(2, "0");
   return (
-    <Link href={`/v2/projects/${p.slug}`} className={`group block shrink-0 rounded-[1.75rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mu-accent ${className}`}>
+    <Link href={`/projects/${p.slug}`} className={`group block shrink-0 rounded-[1.75rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mu-accent ${className}`}>
       <article className="flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-mu-line bg-white shadow-[0_2px_0_rgba(14,20,36,0.03)] transition duration-500 group-hover:border-mu-accent/30 group-hover:shadow-[0_40px_70px_-40px_rgba(79,70,229,0.5)] lg:flex-row">
         <div className="min-h-[12rem] flex-1 lg:w-[46%] lg:flex-none">
           <Cover p={p} i={i} />

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProjectSlugs, projectDetails } from "@/data/projects";
 import { btnGhost, btnPrimary, container, tag } from "@/components/v2/ui";
+import { site } from "@/data/site";
+import { breadcrumbJsonLd, shortTitle, snippet } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -16,18 +18,46 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = projectDetails[slug];
-  if (!p) return { title: "Project not found" };
-  return { title: `${p.title} | Vasudev DS`, description: p.subtitle || p.overview };
+  if (!p) return { title: "Project Not Found" };
+  const title = shortTitle(p.title);
+  const description = snippet(`${p.subtitle}. ${p.overview}`);
+  const pageUrl = `${site.url}/projects/${slug}`;
+  return {
+    title,
+    description,
+    keywords: [...p.tech, "Vasudev Darse Shikari", "Vasu.dev", title, "software development project", "Full Stack Developer project"],
+    alternates: { canonical: `/projects/${slug}` },
+    // og:image / twitter:image come from ./opengraph-image and ./twitter-image (1200×630 cards).
+    openGraph: { title: `${title} | Vasu{.dev} Projects`, description, url: pageUrl, type: "article", authors: [site.name] },
+    twitter: { card: "summary_large_image", title: `${title} | Vasu{.dev} Projects`, description },
+  };
 }
 
-export default async function V2Project({ params }: Props) {
+export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const p = projectDetails[slug];
   if (!p) notFound();
   const images = [...p.screenshots, ...(p.diagrams?.map((d) => d.src) ?? [])];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: p.title,
+    description: p.overview,
+    programmingLanguage: p.tech,
+    codeRepository: p.github || "",
+    author: { "@type": "Person", name: "Vasudev Darse Shikari", url: site.url },
+  };
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/#work" },
+    { name: shortTitle(p.title), path: `/projects/${slug}` },
+  ]);
+
   return (
     <article>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <section className="relative overflow-hidden pb-14 pt-36 sm:pt-44">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-[radial-gradient(60%_70%_at_50%_0%,rgba(221,216,255,0.7),rgba(246,245,241,0))]" aria-hidden />
         <div className={`${container} relative`}>

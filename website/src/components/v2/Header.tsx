@@ -5,11 +5,11 @@ import Link from "next/link";
 import { btnPrimary } from "./ui";
 
 const links = [
-  { label: "About", href: "/v2#about" },
-  { label: "Process", href: "/v2#approach" },
-  { label: "Ask AI", href: "/v2#agentic-ai" },
-  { label: "Projects", href: "/v2#work" },
-  { label: "Experience", href: "/v2#experience" },
+  { label: "About", href: "/#about" },
+  { label: "Process", href: "/#approach" },
+  { label: "Ask AI", href: "/#agentic-ai" },
+  { label: "Projects", href: "/#work" },
+  { label: "Experience", href: "/#experience" },
 ];
 
 export function Header() {
@@ -19,7 +19,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5">
       <div className="mx-auto max-w-[1100px] rounded-[2rem] border border-mu-line bg-white/85 shadow-[0_10px_40px_-20px_rgba(14,20,36,0.25)] backdrop-blur-xl">
         <div className="flex h-16 items-center justify-between pl-6 pr-2.5">
-          <Link href="/v2" className="text-xl font-extrabold tracking-tight text-mu-ink" aria-label="Vasudev — home">
+          <Link href="/" className="text-xl font-extrabold tracking-tight text-mu-ink" aria-label="Vasudev — home">
             Vasudev<span className="text-mu-accent">.</span>
           </Link>
 
@@ -32,7 +32,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/v2#contact" className={`${btnPrimary} !px-6 !py-3 text-[0.95rem]`}>
+            <Link href="/#contact" className={`${btnPrimary} !px-6 !py-3 text-[0.95rem]`}>
               Say hello
             </Link>
             <button

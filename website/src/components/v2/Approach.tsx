@@ -23,7 +23,7 @@ export function Approach() {
 
         <Reveal delay={200}>
           <div className="mt-20 text-center">
-            <Link href="/v2#contact" className={btnPrimary}>Tell me your idea</Link>
+            <Link href="/#contact" className={btnPrimary}>Tell me your idea</Link>
           </div>
         </Reveal>
       </div>
