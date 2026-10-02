@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { ScrollProgress } from "@/components/ScrollProgress";
-import { CustomCursor } from "@/components/CustomCursor";
 import Script from "next/script";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -10,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Vasudev DS — Full Stack Developer & Agentic AI Specialist | Vasu{.dev}",
+    default: "Vasudev DS — Full-Stack Developer & Agentic AI Specialist",
     template: "%s | Vasudev DS",
   },
   description:
@@ -88,21 +86,12 @@ export const metadata: Metadata = {
     description:
       "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
     siteName: "Vasudev DS | Vasu{.dev}",
-    images: [
-      {
-        url: "/assets/author.png",
-        width: 1200,
-        height: 630,
-        alt: "Vasudev DS — Full Stack Developer & Agentic AI Specialist",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vasudev DS — Full Stack Developer & Agentic AI Specialist",
     description:
       "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
-    images: ["/assets/author.png"],
     creator: "@dsvasudev19",
   },
   robots: {
@@ -280,8 +269,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             />
           </noscript>
         )}
-        <ScrollProgress />
-        <CustomCursor />
         {children}
       </body>
     </html>

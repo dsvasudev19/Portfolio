@@ -21,21 +21,12 @@ export const metadata: Metadata = {
       "Productized service packages and platforms licensed directly to your organization — MVP sprints, agentic AI integration, CORE, OPs HUB, ElevateHub, DigiSchool, and more.",
     url: `${site.url}/solutions`,
     type: "website",
-    images: [
-      {
-        url: "/assets/author.png",
-        width: 1200,
-        height: 630,
-        alt: "Vasu{.dev} Solutions",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Solutions | Vasu{.dev}",
     description:
       "Productized service packages and platforms licensed directly to your organization — MVP sprints, agentic AI integration, CORE, OPs HUB, ElevateHub, DigiSchool, and more.",
-    images: ["/assets/author.png"],
   },
 };
 
