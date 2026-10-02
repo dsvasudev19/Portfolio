@@ -22,8 +22,7 @@ export const metadata: Metadata = {
   title: { absolute: "Vasudev DS — Full-Stack Engineer & Agentic AI Specialist" },
   description:
     "Software engineer building dependable full-stack platforms and agentic AI systems for startups — from first architecture to launch.",
-  // Preview of the redesign; the classic site stays the indexed canonical.
-  robots: { index: false, follow: false },
+  alternates: { canonical: "/" },
 };
 
 export default function V2Layout({ children }: { children: React.ReactNode }) {

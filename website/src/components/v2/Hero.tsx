@@ -33,8 +33,8 @@ export function Hero() {
               idea to launch.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link href="/v2#contact" className={btnPrimary}>Start a project</Link>
-              <Link href="/v2#work" className={btnGhost}>See my work</Link>
+              <Link href="/#contact" className={btnPrimary}>Start a project</Link>
+              <Link href="/#work" className={btnGhost}>See my work</Link>
             </div>
             <AskBar />
           </Reveal>

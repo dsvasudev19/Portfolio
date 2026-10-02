@@ -2,12 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { askAssistant, suggestions, type ChatTurn } from "./askAssistant";
+import { site } from "@/data/site";
+import { RichText } from "./RichText";
+import { suggestions } from "./suggestions";
+import { AssistantMessageError, AssistantUnavailable, assistantIsLive, streamAssistant } from "./streamAssistant";
 
-type Msg = { id: number; role: "user" | "assistant"; text: string; step?: number };
+type Step = { label: string; done: boolean };
+type Msg = { id: number; role: "user" | "assistant"; text: string; pending?: boolean; failed?: boolean; progress?: Step[] };
 
-const steps = ["Understanding your question", "Searching Vasudev's profile", "Writing the answer"];
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const ease = [0.22, 1, 0.36, 1] as const;
 
 /** Open the assistant from anywhere: openAssistant("What has Vasudev built?") */
@@ -26,11 +28,13 @@ export function AssistantWidget() {
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const alive = useRef(true);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     alive.current = true;
     return () => {
       alive.current = false;
+      abortRef.current?.abort();
     };
   }, []);
 
@@ -40,35 +44,60 @@ export function AssistantWidget() {
       if (!q || busy) return;
       setBusy(true);
       setInput("");
-      const history: ChatTurn[] = msgs.filter((m) => m.text).map((m) => ({ role: m.role, text: m.text }));
       const uid = ++idRef.current;
       const aid = ++idRef.current;
-      setMsgs((m) => [...m, { id: uid, role: "user", text: q }, { id: aid, role: "assistant", text: "", step: 0 }]);
+      const past = msgs.filter((m) => m.text && !m.failed);
+      setMsgs((m) => [
+        ...m,
+        { id: uid, role: "user", text: q },
+        { id: aid, role: "assistant", text: "", pending: true, progress: [{ label: "Thinking…", done: false }] },
+      ]);
+      const update = (fn: (m: Msg) => Msg) => setMsgs((all) => all.map((x) => (x.id === aid ? fn(x) : x)));
 
-      const reply = askAssistant(q, history);
-      for (let s = 1; s < steps.length; s++) {
-        await sleep(reduce ? 0 : 650);
-        if (!alive.current) return;
-        setMsgs((m) => m.map((x) => (x.id === aid ? { ...x, step: s } : x)));
-      }
-      let answer: string;
+      /** Real agent on the MCP server: shows live tool steps, then streams the answer. */
+      const runLive = async () => {
+        let answer = "";
+        const final = await streamAssistant(
+          q,
+          past.map((m) => ({ role: m.role, content: m.text })),
+          {
+            onStep: (label, status) =>
+              update((x) => {
+                const progress = x.progress ?? [];
+                if (status === "start") return { ...x, progress: [...progress.map((s) => ({ ...s, done: true })), { label, done: false }] };
+                return { ...x, progress: progress.map((s) => (s.label === label ? { ...s, done: true } : s)) };
+              }),
+            onToken: (t) => {
+              answer += t;
+              update((x) => ({ ...x, text: answer, pending: false }));
+            },
+            onReset: () => {
+              answer = "";
+              update((x) => ({ ...x, text: "", pending: true }));
+            },
+          },
+          abortRef.current?.signal,
+        );
+        update((x) => ({ ...x, text: final || answer, pending: false }));
+      };
+
+      abortRef.current = new AbortController();
       try {
-        answer = await reply;
-      } catch {
-        answer = "Sorry, something went wrong. Please try again, or email Vasudev directly.";
+        if (!assistantIsLive) throw new AssistantUnavailable("Assistant URL is not configured");
+        await runLive();
+      } catch (err) {
+        if ((err as { name?: string })?.name !== "AbortError" && alive.current) {
+          const msg =
+            err instanceof AssistantMessageError
+              ? err.message
+              : `I can't reach the assistant right now. Please try again in a moment, or email Vasudev at ${site.contact.email}.`;
+          update((x) => ({ ...x, text: msg, pending: false, failed: true }));
+        }
+      } finally {
+        if (alive.current) setBusy(false);
       }
-      await sleep(reduce ? 0 : 350);
-
-      const words = answer.split(" ");
-      for (let i = 1; i <= words.length; i++) {
-        if (!alive.current) return;
-        const chunk = words.slice(0, i).join(" ");
-        setMsgs((m) => m.map((x) => (x.id === aid ? { ...x, text: chunk, step: undefined } : x)));
-        if (!reduce) await sleep(32);
-      }
-      setBusy(false);
     },
-    [busy, msgs, reduce],
+    [busy, msgs],
   );
 
   const sendRef = useRef(send);
@@ -140,7 +169,7 @@ export function AssistantWidget() {
               <div className="min-w-0 flex-1">
                 <p className="truncate font-bold leading-tight text-mu-ink">Vasudev&rsquo;s AI assistant</p>
                 <p className="flex items-center gap-1.5 text-sm text-mu-muted">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden /> Online · Preview
+                  <span className={`h-2 w-2 rounded-full ${assistantIsLive ? "bg-emerald-500" : "bg-amber-500"}`} aria-hidden /> {assistantIsLive ? "Online" : "Not connected"}
                 </p>
               </div>
               <button type="button" onClick={() => setOpen(false)} aria-label="Close assistant" className="grid h-9 w-9 place-items-center rounded-full text-mu-body transition hover:bg-white/80 focus-visible:outline-2 focus-visible:outline-mu-accent">
@@ -182,23 +211,21 @@ export function AssistantWidget() {
                 ) : (
                   <motion.div key={m.id} initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex gap-2.5">
                     <span className="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-mu-accent to-violet-500 text-xs text-white" aria-hidden>✦</span>
-                    {m.step !== undefined ? (
+                    {m.pending && !m.text ? (
                       <ul className="space-y-1.5 rounded-2xl rounded-tl-md border border-white/80 bg-white/85 px-4 py-3 text-sm shadow-sm" aria-label="Assistant is working">
-                        {steps.map((s, i) => (
-                          <li key={s} className={`flex items-center gap-2 transition-opacity ${i <= m.step! ? "opacity-100" : "opacity-30"}`}>
-                            {i < m.step! ? (
+                        {(m.progress ?? []).map((s) => (
+                          <li key={s.label} className="flex items-center gap-2">
+                            {s.done ? (
                               <span className="text-emerald-600" aria-hidden>✓</span>
-                            ) : i === m.step ? (
-                              <motion.span className="inline-block h-2.5 w-2.5 rounded-full bg-mu-accent" animate={reduce ? undefined : { scale: [1, 1.5, 1] }} transition={{ duration: 0.9, repeat: Infinity }} aria-hidden />
                             ) : (
-                              <span className="inline-block h-2.5 w-2.5 rounded-full bg-mu-line" aria-hidden />
+                              <motion.span className="inline-block h-2.5 w-2.5 rounded-full bg-mu-accent" animate={reduce ? undefined : { scale: [1, 1.5, 1] }} transition={{ duration: 0.9, repeat: Infinity }} aria-hidden />
                             )}
-                            <span className="text-mu-body">{s}</span>
+                            <span className="text-mu-body">{s.label}</span>
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="rounded-2xl rounded-tl-md border border-white/80 bg-white/85 px-4 py-3 text-[0.97rem] leading-relaxed text-mu-ink shadow-sm">{m.text}</p>
+                      <div className="rounded-2xl rounded-tl-md border border-white/80 bg-white/85 px-4 py-3 text-[0.97rem] leading-relaxed text-mu-ink shadow-sm"><RichText text={m.text} /></div>
                     )}
                   </motion.div>
                 ),
@@ -227,7 +254,7 @@ export function AssistantWidget() {
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M12 19V5M6 11l6-6 6 6" /></svg>
                 </button>
               </div>
-              <p className="mt-2 text-center text-xs text-mu-muted">Preview mode · AI can make mistakes. Email Vasudev for anything important.</p>
+              <p className="mt-2 text-center text-xs text-mu-muted">AI can make mistakes. Email Vasudev for anything important.</p>
             </form>
           </motion.section>
         )}

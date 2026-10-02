@@ -5,6 +5,7 @@ import { products } from "@/data/solutions";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { site } from "@/data/site";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -44,20 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: product.tagline,
       url: pageUrl,
       type: "website",
-      images: [
-        {
-          url: "/assets/author.png",
-          width: 1200,
-          height: 630,
-          alt: `${product.title} solution`,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${product.title} | Vasu{.dev} Solutions`,
       description: product.tagline,
-      images: ["/assets/author.png"],
     },
   };
 }
@@ -91,6 +83,18 @@ export default async function ProductPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Solutions", path: "/solutions" },
+              { name: product.title, path: `/solutions/${slug}` },
+            ]),
+          ),
+        }}
       />
       <div className="min-h-screen bg-cream">
       <Navbar />
