@@ -37,7 +37,7 @@ export const site = {
     ],
   },
 
-  resume: "/assets/Darse_Shikari_Vasudev_Resume.pdf",
+  resume: "/assets/Vasudev_Darse_Shikari_Resume_GEN.pdf",
 
   social: {
     github: "https://github.com/dsvasudev19",
