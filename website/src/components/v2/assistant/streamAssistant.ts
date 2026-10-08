@@ -79,6 +79,7 @@ export async function streamAssistant(
   let buffer = "";
   let final = "";
   let streamed = "";
+  let finished = false;
 
   const handle = (ev: ServerEvent) => {
     switch (ev.event) {
@@ -95,6 +96,7 @@ export async function streamAssistant(
         break;
       case "done":
         final = ev.data.answer;
+        finished = true;
         break;
       case "error":
         throw new AssistantMessageError(ev.data.message);
@@ -115,5 +117,11 @@ export async function streamAssistant(
   const tail = parseBlock(buffer);
   if (tail) handle(tail);
 
+  // The server always ends a complete answer with a "done" event. If the connection dropped before it,
+  // never present the partial text as if it were the full answer.
+  if (!finished) {
+    if (!streamed.trim()) throw new AssistantUnavailable("Stream ended without an answer");
+    return `${streamed.trimEnd()}\n\n(The connection was interrupted before the answer finished. Please ask again.)`;
+  }
   return final || streamed;
 }
