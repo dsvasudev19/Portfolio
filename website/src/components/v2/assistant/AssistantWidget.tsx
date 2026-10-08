@@ -158,7 +158,7 @@ export function AssistantWidget() {
             exit={reduce ? undefined : { opacity: 0, scale: 0.94, y: 16 }}
             transition={{ duration: 0.35, ease }}
             style={{ transformOrigin: "bottom right" }}
-            className="fixed bottom-24 right-3 z-[70] flex h-[min(38rem,calc(100dvh-7.5rem))] w-[min(26rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/70 shadow-[0_40px_90px_-30px_rgba(79,70,229,0.55)] ring-1 ring-mu-ink/5 backdrop-blur-2xl sm:right-6"
+            className="fixed bottom-24 right-3 z-[70] flex h-[min(38rem,calc(100dvh-7.5rem))] w-[min(35rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/50 shadow-[0_40px_90px_-30px_rgba(79,70,229,0.55)] ring-1 ring-mu-ink/5 backdrop-blur-2xl backdrop-saturate-150 sm:right-6"
           >
             {/* soft colour that blends the glass into the page */}
             <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-mu-lilac/70 blur-3xl" aria-hidden />

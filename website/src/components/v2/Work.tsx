@@ -159,9 +159,9 @@ function Pinned() {
         <div className="flex flex-1 items-center">
           <motion.div ref={trackRef} style={{ x }} className="flex w-max items-stretch gap-8 pl-[max(3rem,calc((100vw-1200px)/2+3rem))] pr-[8vw]">
             {featured.map((p, i) => (
-              <Card key={p.slug} p={p} i={i} className="h-[min(27rem,calc(100vh-24rem))] min-h-[22rem] w-[min(62vw,50rem)]" />
+              <Card key={p.slug} p={p} i={i} className="h-[min(30rem,calc(100vh-22rem))] min-h-[22rem] w-[min(62vw,50rem)]" />
             ))}
-            <MoreCard className="h-[min(27rem,calc(100vh-24rem))] min-h-[22rem] w-[min(30vw,24rem)]" />
+            <MoreCard className="h-[min(30rem,calc(100vh-22rem))] min-h-[22rem] w-[min(30vw,24rem)]" />
           </motion.div>
         </div>
 
