@@ -1,10 +1,7 @@
-export type ProjectStatus = "shipped" | "in-development" | "in-progress";
-
 export type Project = {
   slug?: string;
   title: string;
   description: string;
-  status: ProjectStatus;
   coverType: "image" | "brand";
   thumbnail?: string;
   accent?: "lime" | "blue" | "coral" | "ink";
@@ -19,56 +16,51 @@ export const projects: Project[] = [
     slug: "elevatehub",
     title: "ElevateHub (Astravora)",
     description:
-      "AI-native learning management system & AI solutions suite featuring an AI Interview Coach, Skill Gap Analyzer, AI Resume Builder, RAG Q&A engine, and real-time trainee skill graph.",
-    status: "shipped",
+      "AI-native learning and career platform live at astravora.in — proctored exams, coding challenges in 8 languages, a six-agent project reviewer, AI mock interviews and an MCP server for instructors.",
     coverType: "brand",
     accent: "lime",
     github: "https://github.com/Tech-by-Vasu/Edu-Tech-Platform",
     live: "https://astravora.in",
-    tags: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API", "RAG Engine", "WebSockets"],
+    tags: ["TypeScript", "Node.js", "PostgreSQL", "Prisma", "React 19", "React Native", "Temporal", "MCP"],
     featured: true,
   },
   {
     slug: "core-platform",
-    title: "CORE (AI Native Collaborative Organizational Resource Engine)",
+    title: "CORE (Cross Operational Resource Engine)",
     description:
-      "Enterprise startup management platform built with DDD & microservices — MCP servers let AI agents delegate tasks and execute operations in natural language.",
-    status: "shipped",
+      "Enterprise workforce and project platform — HR, agile project management and messaging, with a LangGraph agent layer and an OAuth-secured MCP server exposing about 145 tools to AI clients.",
     coverType: "brand",
     accent: "ink",
     github: "https://github.com/dsvasudev19/CORE",
     live: "https://core.dsvasudev.in",
-    tags: ["Java", "Spring Boot", "React", "Node.js", "MCP", "LangGraph", "DDD"],
+    tags: ["Java", "Spring Boot", "LangGraph", "MCP", "React 19", "Socket.IO", "Temporal", "Docker"],
     featured: true,
   },
   {
     slug: "mcp-connector",
-    title: "Portfolio MCP Connector",
+    title: "Agentic AI Portfolio (MCP Connector)",
     description:
-      "Model Context Protocol (MCP) server exposing profile, experience, projects, skills, and calendar booking as callable tools for AI agents like Claude & ChatGPT.",
-    status: "shipped",
+      "A live AI agent that answers questions about me, built on a Model Context Protocol server with 16 tools that Claude and ChatGPT can also use — plus calendar booking.",
     coverType: "brand",
     accent: "lime",
-    tags: ["MCP", "TypeScript", "Node.js", "Claude API", "AI Agent Tools"],
+    tags: ["MCP", "LangGraph", "LangChain", "TypeScript", "Node.js", "AI Agent Tools"],
     featured: true,
   },
   {
     slug: "digischool",
     title: "DigiSchool Apps",
     description:
-      "Upcoming AI-powered platform for managing whole school operations (staff, students, academics, attendance, and administrative workflows) across 8 microservices.",
-    status: "shipped",
+      "School management ERP on Spring Cloud microservices, with a student and parent mobile app, Temporal workflows and an AI study assistant behind a server-side child-safety pipeline.",
     coverType: "brand",
     accent: "blue",
-    tags: ["Java", "Spring Boot 3", "React 19", "MySQL", "Multi-tenant SaaS", "AI School Management"],
+    tags: ["Java", "Spring Cloud", "React", "React Native", "MySQL", "Temporal", "AI Safety"],
     featured: true,
   },
   {
     slug: "kupa-co-investing",
     title: "Co-Investing Platform",
     description:
-      "In progress at Kupa Inc — co-investment workflows and real-time portfolio tracking for high-net-worth investors.",
-    status: "in-progress",
+      "At Kupa Inc — co-investment workflows and real-time portfolio tracking for high-net-worth investors.",
     coverType: "brand",
     accent: "coral",
     tags: ["Node.js", "TypeScript", "React", "PostgreSQL", "Docker"],
@@ -79,7 +71,6 @@ export const projects: Project[] = [
     title: "ProjeXpert",
     description:
       "Comprehensive project management platform with GitHub integration, task tracking, and Kanban boards.",
-    status: "shipped",
     coverType: "image",
     thumbnail:
       "https://res.cloudinary.com/dxqrg09mq/image/upload/v1737227527/c01mnt3r0tqe0fg3tfgu.png",
@@ -93,7 +84,6 @@ export const projects: Project[] = [
     title: "SmartTransit System",
     description:
       "Urban transportation and carpool services platform built with Spring Boot microservices and Angular.",
-    status: "shipped",
     coverType: "image",
     thumbnail: "/assets/urbanpulse.png",
     github: "https://github.com/dsvasudev19/Capstone-Project",
@@ -105,7 +95,6 @@ export const projects: Project[] = [
     title: "Vehicle Rentals System",
     description:
       "Vehicle rental marketplace with vendor listings and user reservations using Spring Boot and Angular.",
-    status: "shipped",
     coverType: "image",
     thumbnail: "/assets/image.png",
     github: "https://github.com/dsvasudev19/vehicle-rental-system-microservices",
@@ -117,7 +106,6 @@ export const projects: Project[] = [
     title: "Chatterbox",
     description:
       "Real-time messaging and file sharing platform built with Node.js, Express, MySQL and React.",
-    status: "shipped",
     coverType: "image",
     thumbnail:
       "https://res.cloudinary.com/dxqrg09mq/image/upload/v1733584417/screencapture-chatterbox-dev-vercel-app-2024-11-18-15_50_55_nhs7op.png",
@@ -128,7 +116,6 @@ export const projects: Project[] = [
   {
     title: "Banking Website",
     description: "Secure banking website with robust architecture and user-friendly interface.",
-    status: "shipped",
     coverType: "image",
     thumbnail: "/assets/banking.png",
     github: "https://github.com/dsvasudev19/bankingsystem.github.io",
@@ -138,7 +125,6 @@ export const projects: Project[] = [
   {
     title: "roughAge E-Commerce",
     description: "Fresh produce delivery platform with same-day delivery service.",
-    status: "shipped",
     coverType: "image",
     thumbnail: "/assets/ecommerce.png",
     github: "https://github.com/dsvasudev19/roughAge_eCommerce",
@@ -151,7 +137,6 @@ export type ProjectDetail = {
   slug: string;
   title: string;
   subtitle: string;
-  status: ProjectStatus;
   overview: string;
   features: string[];
   tech: string[];
@@ -165,80 +150,88 @@ export const projectDetails: Record<string, ProjectDetail> = {
   elevatehub: {
     slug: "elevatehub",
     title: "ElevateHub (Astravora)",
-    subtitle: "AI Native Learning Management System & Enterprise Solutions Suite",
-    status: "shipped",
+    subtitle: "AI-native learning, exam and career platform — live in production",
     overview:
-      "ElevateHub (Astravora) is an enterprise AI-native learning management system and solutions suite designed to upskill trainees and power training programs within organizations through autonomous AI coaching, automated gap analysis, vector-search Q&A engines, and multi-tenant management portals.",
+      "ElevateHub (Astravora) is a polyglot Turborepo monorepo built as federated microservices with micro-frontends and a native mobile app. It separates learning delivery, proctored exams, coding challenges, marketing, real-time collaboration, AI agents and identity into loosely coupled services — 7 applications, about 10 backend services and a PostgreSQL database of 112 models — and runs in production at astravora.in.",
     features: [
-      "AI Interview Coach: Interactive real-time technical interview practice with automated AI evaluation & speech feedback",
-      "Skill Gap Analyzer: Dynamic competency tracking mapping trainee skills to targeted learning paths",
-      "AI Resume Builder: Intelligent resume optimization tailored to specific engineering role criteria (resume.astravora.in)",
-      "RAG Knowledge Engine: Contextual vector search knowledge base using OpenAI embeddings for instant Q&A",
-      "Live Trainee Skill Graph: Real-time progress dashboard tracking competency metrics across cohorts",
-      "Multi-Role Dashboard: Dedicated interfaces for learners (learner.astravora.in), instructors (instructor.astravora.in), and system admins (admin.astravora.in)",
+      "Anti-cheating exam proctoring: screen capture, logging of full-screen exits and tab switches, and blocking of browsers with built-in AI assistants during exams",
+      "Coding challenges in 8 languages (JS, TS, Python, Java, C++, C, Go, Rust) run in an isolated Piston sandbox, with AI-generated problems and hidden test cases",
+      "Six-agent project review: audits a student's GitHub repo against the project goals, checks UI screenshots with a vision model and comments on the pull request",
+      "AI mock interviewer (8 adaptive rounds, STAR scoring), skill gap analyzer, Socratic AI tutor, soft-skills coach and notes copilot",
+      "Aura Resume AI Studio: live preview, four layouts, AI rewriting for a target job and an ATS score analyzer (resume.astravora.in)",
+      "Collaborative notes on Yjs CRDTs with live presence and automatic snapshots every 10 minutes",
+      "MCP server with 60+ tools so instructors can build courses and exams from Claude or ChatGPT",
+      "Learner, instructor, admin and marketing portals, a React Native mobile app, hackathons, certificates and Cashfree / Razorpay payments",
+      "Security: OAuth 2.0 / OIDC with PKCE, RS256 JWTs through JWKS, TOTP two-factor and HMAC-signed service-to-service calls with replay protection",
     ],
-    tech: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React 19", "OpenAI API", "RAG Engine", "Vector DB", "WebSockets"],
+    tech: ["TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL 16", "React 19", "TanStack Start", "React Native (Expo)", "Temporal", "Piston", "Yjs", "MCP SDK", "Docker", "Nginx", "Grafana + Loki"],
     screenshots: [],
     github: "https://github.com/Tech-by-Vasu/Edu-Tech-Platform",
     live: "https://astravora.in",
   },
   "core-platform": {
     slug: "core-platform",
-    title: "CORE (AI Native Collaborative Organizational Resource Engine)",
-    subtitle: "Enterprise Startup Management System — All Operations, One Interface",
-    status: "shipped",
+    title: "CORE (Cross Operational Resource Engine)",
+    subtitle: "Enterprise workforce and project intelligence platform with an agentic AI layer",
     overview:
-      "An AI-native collaborative organizational resource engine built with microservices and Domain-Driven Design to manage every facet of startup operations — employees, projects, Kanban boards, communications, and resource allocation — with live webapp and MCP servers bridging AI agents to platform APIs.",
+      "CORE is a full-stack enterprise platform that combines HR management, agile project management, real-time messaging and a comprehensive agentic AI layer built on LangGraph and the Model Context Protocol. It has separate portals for admins, employees and clients, and is a pnpm + Turborepo monorepo of 2 apps, 6 services and 3 shared packages, deployed with Docker behind Nginx.",
     features: [
-      "Microservice architecture with Domain-Driven Design for clean bounded contexts across core operations",
-      "MCP servers bridging AI agents with platform APIs — LangChain/LangGraph-orchestrated multi-step agent workflows for natural language task delegation",
-      "Centralized Web App (app.core.dsvasudev.in) and interactive documentation portal (docs.core.dsvasudev.in)",
-      "Automated sprint planning and resource allocation through AI agent integration — 40% reduction in admin overhead",
-      "Real-time WebSocket messaging using Node.js and Socket.IO with sub-100ms latency for cross-team collaboration",
+      "HR suite: employee lifecycle, magic-link onboarding, attendance, leave approvals, payroll with PDF payslips, performance reviews, recruitment and more",
+      "Agile project management: projects, epics, issues, sprints, a Kanban board, time tracking, bug tracking and stand-ups",
+      "Client portal and invoicing, with PDF invoices and project visibility for clients",
+      "AgentFlow: a no-code visual workflow builder where AI generates a workflow from plain language, self-corrects it, and runs it with live step streaming",
+      "Human-in-the-loop sprint manager: the AI proposes changes, a person approves them, and every action is audited",
+      "MCP server secured with OAuth 2.1 + PKCE: about 145 role-gated tools in 14 categories so Claude and other AI clients can work with CORE data",
+      "AI chat assistant with RAG over company documents; 15 LangGraph graphs on OpenRouter, OpenAI, Claude or Gemini, traced with LangSmith",
+      "Real-time messaging: channels, direct messages, threads, mentions, reactions and presence",
+      "Security: JWT with JWKS, Google / GitHub / OIDC sign-in, TOTP MFA, WebAuthn biometrics, RBAC and full audit logs",
     ],
-    tech: ["Java", "Spring Boot", "React", "Node.js", "MCP", "LangChain", "LangGraph", "WebSocket", "Docker", "Socket.IO"],
+    tech: ["Java 17", "Spring Boot 3.4", "TypeScript", "LangChain.js", "LangGraph.js", "MCP SDK", "React 19", "Next.js 16", "Socket.IO", "PostgreSQL", "Temporal", "Docker", "Nginx"],
     screenshots: [],
     github: "https://github.com/dsvasudev19/CORE",
     live: "https://core.dsvasudev.in",
   },
   "mcp-connector": {
     slug: "mcp-connector",
-    title: "Portfolio MCP Connector",
-    subtitle: "Model Context Protocol Server for AI Assistant Integration",
-    status: "shipped",
+    title: "Agentic AI Portfolio (MCP Connector)",
+    subtitle: "A live AI agent and MCP server that answers questions about Vasudev",
     overview:
-      "A custom Model Context Protocol (MCP) server that exposes Vasudev's complete engineering profile — work history, projects, skills, system design principles, and live calendar booking — as executable tools for AI agents like Claude and ChatGPT.",
+      "A portfolio that can talk back. A Model Context Protocol (MCP) server exposes Vasudev's engineering profile — work history, projects, skills, system design principles and live calendar booking — as 16 tools. A LangChain + LangGraph agent uses those same tools to power the assistant on this site, and Claude, ChatGPT and other MCP clients can connect to the server directly.",
     features: [
-      "16+ custom MCP tools: get_profile, get_projects, get_skills, check_slots, book_appointment",
-      "Connects directly with Claude custom connectors for interactive live Q&A",
-      "Enables AI agents to query experience metrics and schedule meetings dynamically",
-      "Built with TypeScript and Model Context Protocol SDK",
+      "16 MCP tools: get_profile, get_projects, get_skills, get_project_deep_dive, check_slots, book_appointment and more",
+      "LangGraph agent that calls the tools, streams its answer to the website and shows what it is doing step by step",
+      "Connects directly to Claude and other MCP clients as a custom connector for live Q&A",
+      "Checks real calendar availability and can book meetings with email confirmation",
+      "Reliable by design: model fallbacks, retries, per-visitor rate limits and no AI keys in the browser",
     ],
-    tech: ["TypeScript", "Node.js", "Model Context Protocol", "Claude API", "JSON Schema"],
+    tech: ["TypeScript", "Node.js", "Model Context Protocol", "LangChain", "LangGraph", "OpenRouter", "Express", "Google Calendar API"],
     screenshots: [],
     live: "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Vasudev&connectorUrl=https%3A%2F%2Fai.dsvasudev.in%2Fmcp",
   },
   digischool: {
     slug: "digischool",
     title: "DigiSchool Apps",
-    subtitle: "Upcoming AI-Powered Platform for Managing Whole School Operations",
-    status: "shipped",
+    subtitle: "School management ERP with a student and parent app and a safe AI study assistant",
     overview:
-      "An upcoming AI-powered platform for managing whole school ecosystems — staff, students, academics, attendance, payroll, and administration — across 8 independent multi-tenant microservices.",
+      "DigiSchool is an Integrated School Management System for K-12: a Spring Cloud microservice backend, React dashboards for administrators and teachers, Next.js sites, an Expo mobile app (ClassBoard) for students and parents, Temporal workflows for long-running school processes and an AI learning assistant protected by a server-side child-safety pipeline.",
     features: [
-      "Whole-school management covering staff, student profiles, academics, attendance, and payroll",
-      "8 independent microservices: attendance, grades, payroll, library, notifications, authentication, reporting, and admin",
-      "AI-driven automated attendance tracking, grade analytics, and report generation",
-      "JWT-based stateless authentication with MFA and granular RBAC for 6+ user roles",
+      "School ERP: admissions, student and parent profiles, staff, classes, timetables and daily attendance",
+      "Exams, marks entry, GPA / percentage calculation and report cards with teacher remarks",
+      "Fees with flexible structures, instalments, payments, receipts and reconciliation; transport routes; library circulation with fines; certificates from templates",
+      "Staff leave policies with automatic accrual, plus payroll and payslips",
+      "Temporal workflows: student promotion at year end, fee reminders, notification reconciliation and leave accrual",
+      "ClassBoard mobile app with biometric unlock and an AI School tab: doubt solver, teacher, step-by-step calculator, story teller, study buddy and mindful moments",
+      "AI safety: parent-student authorisation, a daily quota, moderation of both questions and answers, grade-aware prompts and a full audit log — no AI keys ever reach the phone",
+      "Security: JWT with refresh rotation and JWKS, TOTP MFA, SMS one-time passwords, WebAuthn biometrics and declarative role-based permissions",
+      "Multi-tenant controls (school provisioning, feature flags, quotas) and observability with Prometheus alerts, Grafana and Loki",
     ],
-    tech: ["Java", "Spring Boot 3.x", "React 19", "MySQL", "Prometheus", "Grafana", "Multi-tenant SaaS"],
+    tech: ["Java 17/21", "Spring Boot 3", "Spring Cloud", "Temporal", "MySQL 8", "PostgreSQL 15", "React", "Next.js 16", "React Native (Expo)", "OpenRouter", "Prometheus", "Grafana", "Loki"],
     screenshots: [],
   },
   "kupa-co-investing": {
     slug: "kupa-co-investing",
     title: "Co-Investing Platform",
     subtitle: "Co-Investment Workflows & Real-Time Portfolio Tracking",
-    status: "in-progress",
     overview:
       "Building the co-investing platform at Kupa Inc — enabling high-net-worth investors to discover, participate in, and manage co-investment deals across multiple asset classes.",
     features: [
@@ -254,7 +247,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     slug: "projexpert",
     title: "ProjeXpert",
     subtitle: "Comprehensive Project Management Platform with GitHub Integration",
-    status: "shipped",
     overview:
       "A robust platform for managing projects and tasks within an organization, with seamless GitHub integration for automatic repository creation and issue management.",
     features: [
@@ -281,7 +273,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     slug: "smarttransit",
     title: "SmartTransit System",
     subtitle: "Microservices-Based Smart Public Transportation System",
-    status: "shipped",
     overview:
       "A scalable microservices architecture for smart public transportation — carpooling, bus scheduling, live tracking via Ola Maps, payments, and centralized authentication.",
     features: [
@@ -305,7 +296,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     slug: "vehicle-rental",
     title: "Vehicle Rentals System",
     subtitle: "Comprehensive Vehicle Rental Platform",
-    status: "shipped",
     overview:
       "A microservices-based vehicle rental platform with Angular client UI, React admin dashboard, and Spring Boot backend services.",
     features: [
@@ -326,7 +316,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     slug: "chatterbox",
     title: "Chatterbox",
     subtitle: "Real-time Chat Application",
-    status: "shipped",
     overview:
       "A real-time chatting application with instant messaging, user authentication, and a fully responsive design across all devices.",
     features: [

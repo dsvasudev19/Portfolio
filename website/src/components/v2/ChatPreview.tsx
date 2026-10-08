@@ -7,7 +7,7 @@ const qa = [
   {
     q: "What has Vasudev built?",
     lookup: "Looking through his projects…",
-    a: "He has built AI-powered platforms like ElevateHub (a learning platform) and CORE (a startup management system), plus a co-investing platform at Kupa Inc, mobile apps and microservice systems.",
+    a: "He has built AI-powered platforms like ElevateHub (a learning platform) and CORE (a workforce and project platform), plus a co-investing platform at Kupa Inc, mobile apps and microservice systems.",
   },
   {
     q: "What does he work with?",

@@ -6,13 +6,6 @@ import { products, type Product } from "@/data/solutions";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
-const accentClass = {
-  lime: "tag-b-lime",
-  blue: "tag-b-blue",
-  coral: "tag-b-coral",
-  ink: "tag-b-ink",
-};
-
 function ProductCard({ product }: { product: Product }) {
   const router = useRouter();
 
@@ -30,8 +23,7 @@ function ProductCard({ product }: { product: Product }) {
         }
       }}
     >
-      <span className={`tag-b w-fit ${accentClass[product.accent]}`}>{product.status}</span>
-      <h3 className="text-h3 mt-4 transition-opacity group-hover:opacity-70">{product.title}</h3>
+      <h3 className="text-h3 transition-opacity group-hover:opacity-70">{product.title}</h3>
       <p className="mt-3 text-base font-medium leading-relaxed text-muted">{product.tagline}</p>
 
       <ul className="mt-6 space-y-2.5">

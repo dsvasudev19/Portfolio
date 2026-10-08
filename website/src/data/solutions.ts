@@ -63,7 +63,6 @@ export type Feature = {
 export type Product = {
   slug: string;
   title: string;
-  status: "In Development" | "Available";
   tagline: string;
   includes: string[];
   cta: string;
@@ -79,57 +78,55 @@ export const products: Product[] = [
   {
     slug: "core",
     title: "CORE",
-    status: "Available",
-    tagline: "One platform for a startup to run its entire office — people, projects, and operations in one place.",
+    tagline: "One platform for a company to run its people, projects and clients — with AI agents that work under real permissions.",
     includes: [
-      "Employee & team management",
-      "Project & task tracking with Kanban boards",
-      "Centralized company operations dashboard",
-      "Role-based access for every department",
+      "HR: onboarding, attendance, leave, payroll, recruitment",
+      "Agile projects, Kanban boards, sprints and time tracking",
+      "Client portal with invoicing",
+      "AI assistant and an MCP server for AI clients",
     ],
     cta: "Get a Quote",
     accent: "ink",
     problem:
-      "Early teams end up stitching together five different tools — a project tracker, an HR spreadsheet, a Slack channel for approvals, a doc for who owns what. CORE replaces all of it with one system built around how a small team actually works.",
+      "Growing teams end up stitching together separate tools — an HR system, a project tracker, a chat app, a billing tool. CORE puts them in one platform and adds an AI layer that can act on that data, with approvals and an audit trail for everything it does.",
     features: [
       {
-        title: "Team & Org Chart",
-        description: "Manage employees, roles, and reporting lines in one place, with role-based access built in from day one.",
+        title: "HR & People",
+        description: "Employee records, magic-link onboarding, attendance, leave approvals, payroll with PDF payslips, performance reviews and recruitment.",
       },
       {
-        title: "Project & Task Management",
-        description: "Kanban boards, task assignment, and deadlines tied directly to the people and departments responsible.",
+        title: "Agile Project Management",
+        description: "Projects, epics, issues, sprints, a Kanban board, time tracking, bug tracking and stand-ups.",
       },
       {
-        title: "Company Operations Dashboard",
-        description: "A single view of what's happening across every department — no more chasing updates in five channels.",
+        title: "Client Portal & Invoicing",
+        description: "Give clients visibility into their projects and bill them with PDF invoices from the same system.",
       },
       {
-        title: "Role-Based Access Control",
-        description: "Give every department exactly the access it needs, nothing more — enforced at the platform level.",
+        title: "AgentFlow Workflow Builder",
+        description: "Describe a process in plain language and AI builds the workflow; run it with live, step-by-step progress.",
       },
       {
-        title: "Approvals & Workflows",
-        description: "Leave requests, expense approvals, and internal sign-offs routed automatically to the right person.",
+        title: "AI That Asks First",
+        description: "The sprint-manager agent proposes changes; a person approves them, and every step is written to an audit log.",
       },
       {
-        title: "Built on Domain-Driven Design",
-        description: "A microservice architecture that scales with your org instead of becoming unmaintainable at 50 people.",
+        title: "MCP Server & Security",
+        description: "An OAuth 2.1 MCP server exposes about 145 role-gated tools to AI clients. Sign-in with Google, GitHub or OIDC, TOTP MFA, WebAuthn and RBAC.",
       },
     ],
     idealFor: [
-      "Seed-to-Series A startups replacing spreadsheets",
-      "Teams outgrowing generic project management tools",
-      "Founders who want one system of record for the whole company",
+      "Growing companies replacing a patchwork of HR and project tools",
+      "Teams that want AI agents working with their data under proper permissions",
+      "Organisations that need an audit trail for people, projects and AI actions",
     ],
-    techStack: ["Java", "Spring Boot", "React", "PostgreSQL", "Docker", "MCP"],
+    techStack: ["Java", "Spring Boot", "LangGraph", "MCP", "React", "PostgreSQL", "Docker"],
     engagementModel:
       "Licensed and deployed to your infrastructure — you own the codebase and the data, with optional ongoing support.",
   },
   {
     slug: "opshub",
     title: "OPs HUB",
-    status: "In Development",
     tagline: "Everything a freelancer needs to run their business — projects, time, and invoices in one dashboard.",
     includes: [
       "Project & client tracking",
@@ -178,99 +175,97 @@ export const products: Product[] = [
   {
     slug: "elevatehub",
     title: "ElevateHub (Astravora)",
-    status: "Available",
-    tagline: "A single platform for training institutions to manage trainees, trainers, and AI-assisted upskilling.",
+    tagline: "An AI-native platform for training institutions: courses, proctored exams, coding practice and AI career coaching in one place.",
     includes: [
-      "Trainee & trainer management",
-      "AI mentorship & automated feedback loops",
-      "RAG-powered knowledge base for trainee questions",
-      "Real-time skill graph & competency tracking",
+      "Courses, cohorts, exams and certificates",
+      "Proctored exams and coding challenges",
+      "AI mock interviews, tutor and skill gap analysis",
+      "AI project review and an MCP server for instructors",
     ],
     cta: "Get a Quote",
     accent: "lime",
     problem:
-      "Training institutions juggle attendance sheets, scattered feedback, and no real way to track whether a trainee's skills are actually improving. ElevateHub gives trainers and trainees one shared platform — with AI doing the busywork.",
+      "Training institutions juggle separate tools for courses, exams, coding practice and career preparation, with no easy way to check whether trainees can really do the work. ElevateHub brings them together and lets AI handle the repetitive parts.",
     features: [
       {
-        title: "Trainee & Trainer Management",
-        description: "Onboard trainees, assign trainers, and track cohorts without a spreadsheet in sight.",
+        title: "Proctored Exams",
+        description: "Anti-cheating checks: screen capture, logging of full-screen exits and tab switches, and blocking of browsers with built-in AI assistants during exams.",
       },
       {
-        title: "AI Mentorship & Feedback",
-        description: "Automated, contextual feedback on trainee work — freeing trainers to focus on what needs a human.",
+        title: "Coding Challenges",
+        description: "Code runs in 8 languages inside an isolated sandbox, with AI-generated problems and hidden test cases.",
       },
       {
-        title: "RAG-Powered Knowledge Base",
-        description: "Trainees get instant, accurate answers to course questions, grounded in your institution's material.",
+        title: "AI Project Review",
+        description: "Six agents audit a trainee's GitHub project against its goals and comment directly on the pull request.",
       },
       {
-        title: "Real-Time Skill Graph",
-        description: "See exactly which competencies each trainee has — and hasn't — mastered, updated as they work.",
+        title: "AI Career Coaching",
+        description: "An 8-round mock interviewer, skill gap analyzer, Socratic tutor, soft-skills coach and a resume studio with an ATS score.",
       },
       {
-        title: "Communication Dashboard",
-        description: "Trainee-trainer messaging and feedback loops in one place, not scattered across email and chat apps.",
+        title: "MCP for Instructors",
+        description: "Instructors can build courses and exams from Claude or ChatGPT through a 60+ tool MCP server.",
       },
       {
-        title: "Progress Reporting",
-        description: "Exportable reports on cohort and individual progress for institutional reporting.",
+        title: "Learning Tools",
+        description: "Collaborative notes, RAG answers from study material, hackathons, gamification, certificates, and a mobile app.",
       },
     ],
     idealFor: [
       "Coding bootcamps and technical training institutes",
       "Corporate L&D teams running structured upskilling programs",
-      "Any institution measuring competency, not just attendance",
+      "Institutions that need proctored exams and verified practical skills",
     ],
-    techStack: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "React", "OpenAI API"],
+    techStack: ["TypeScript", "Node.js", "PostgreSQL", "Prisma", "React", "React Native", "Temporal"],
     engagementModel: "Licensed per institution — deployed to your infrastructure with your branding.",
   },
   {
     slug: "digischool",
     title: "DigiSchool",
-    status: "Available",
-    tagline: "One platform for schools to manage staff, operations, and AI-powered features — deployed for your school.",
+    tagline: "One platform for schools to run academics, fees, staff and communication, with a supervised AI study assistant for students.",
     includes: [
-      "Staff & school operations management",
-      "Attendance, grading, and reporting",
-      "AI-powered features for teaching & admin",
-      "Delivered and handed off to your team",
+      "Admissions, attendance, exams and report cards",
+      "Fees, payroll, library and transport",
+      "Student and parent mobile app",
+      "AI study assistant with child-safety controls",
     ],
     cta: "Get a Quote",
     accent: "blue",
     problem:
-      "Schools run on a patchwork of legacy systems — one for attendance, another for grading, a third for payroll — none of which talk to each other. DigiSchool replaces the patchwork with one platform, built from focused services instead of a fragile monolith.",
+      "Schools run on a patchwork of legacy systems — one for attendance, another for grading, a third for fees and payroll — none of which talk to each other. DigiSchool replaces the patchwork with one platform built from focused services.",
     features: [
       {
-        title: "Staff & Operations Management",
-        description: "Manage staff records, scheduling, and day-to-day school operations from one dashboard.",
+        title: "School Operations",
+        description: "Admissions, student and parent profiles, staff, classes, timetables, daily attendance, transport and a library.",
       },
       {
-        title: "Attendance & Grading",
-        description: "Digital attendance and grade management, with automatic report card generation.",
+        title: "Exams & Report Cards",
+        description: "Marks entry, GPA and percentage calculation, and report cards with teacher remarks.",
       },
       {
-        title: "AI-Powered Admin Tools",
-        description: "AI assistance for the repetitive parts of teaching and admin — drafting reports, flagging at-risk students.",
+        title: "Fees, Payroll & Leave",
+        description: "Fee structures with instalments and reconciliation, staff payroll, and leave policies with automatic accrual.",
       },
       {
-        title: "Role-Based Access",
-        description: "Six-plus distinct roles (admin, teacher, staff) with granular permissions and zero privilege-escalation surface.",
+        title: "Automated Workflows",
+        description: "Durable background jobs handle year-end promotion, fee reminders and notification reconciliation.",
       },
       {
-        title: "Secure, Modern Authentication",
-        description: "JWT-based auth with MFA, built for a system that holds student data.",
+        title: "Student & Parent App",
+        description: "A mobile app with biometric unlock and an AI School tab: doubt solver, teacher, calculator and study tools.",
       },
       {
-        title: "Built for Reliability",
-        description: "Backed by real observability (Prometheus, Grafana, Loki) — not a black box you have to hope stays up.",
+        title: "Safe AI & Strong Security",
+        description: "AI answers pass parent authorisation, daily quotas and two-way moderation, with an audit log. Sign-in with MFA, SMS codes and biometrics.",
       },
     ],
     idealFor: [
       "K-12 schools replacing legacy management software",
       "Education groups running multiple campuses",
-      "Institutions that need AI features without sending student data to a third party",
+      "Schools that want supervised, audited AI for students",
     ],
-    techStack: ["Java", "Spring Boot 3", "React 19", "MySQL", "Prometheus", "Grafana", "Loki"],
+    techStack: ["Java", "Spring Cloud", "React", "React Native", "MySQL", "Temporal", "Prometheus"],
     engagementModel: "Deployed and delivered to your school's infrastructure, fully handed off to your IT team.",
   },
 ];

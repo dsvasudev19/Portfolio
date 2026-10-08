@@ -9,14 +9,13 @@ import { site } from "@/data/site";
 import { Words } from "./motion";
 import { container, eyebrow } from "./ui";
 
-const statusLabel = { shipped: "Shipped", "in-development": "In development", "in-progress": "In progress" };
 const shortTitle = (t: string) => t.replace(/\s*\(.*\)/, "");
 const featured = projects.filter((p) => p.featured && p.slug);
 
 /** What each project is, in a few words. */
 const category: Record<string, string> = {
   elevatehub: "AI · Education platform",
-  "core-platform": "AI · Business management",
+  "core-platform": "AI · Workforce & projects",
   "mcp-connector": "AI · Developer tooling",
   digischool: "SaaS · School management",
   "kupa-co-investing": "FinTech · Investing",
@@ -67,13 +66,7 @@ function Card({ p, i, className }: { p: Project; i: number; className: string })
           <Cover p={p} i={i} />
         </div>
         <div className="flex flex-1 flex-col p-6 sm:p-8 lg:flex-none lg:w-[54%]">
-          <div className="flex items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.12em] text-mu-muted">
-            <span className="inline-flex items-center gap-2">
-              <span className={`h-2 w-2 rounded-full ${p.status === "shipped" ? "bg-emerald-500" : "bg-amber-500"}`} />
-              {statusLabel[p.status]}
-            </span>
-            <span className="font-mono">{num} / {String(featured.length).padStart(2, "0")}</span>
-          </div>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-mu-muted">{num} / {String(featured.length).padStart(2, "0")}</p>
           <h3 className="mt-4 text-2xl font-bold leading-tight tracking-tight text-mu-ink sm:text-[1.75rem]">{shortTitle(p.title)}</h3>
           <p className="mt-3 line-clamp-4 text-base leading-relaxed text-mu-body">{p.description}</p>
 

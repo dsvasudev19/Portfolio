@@ -9,13 +9,6 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
-const accentClass = {
-  lime: "tag-b-lime",
-  blue: "tag-b-blue",
-  coral: "tag-b-coral",
-  ink: "tag-b-ink",
-};
-
 const accentBg = {
   lime: "bg-lime",
   blue: "bg-blue",
@@ -108,11 +101,7 @@ export default async function ProductPage({ params }: Props) {
               ← All Products
             </Link>
 
-            <div className="mt-6">
-              <span className={`tag-b ${accentClass[product.accent]}`}>{product.status}</span>
-            </div>
-
-            <h1 className="text-h1 mt-5 max-w-3xl text-balance">{product.title}</h1>
+            <h1 className="text-h1 mt-6 max-w-3xl text-balance">{product.title}</h1>
             <p className="mt-5 max-w-2xl text-lg font-medium leading-relaxed text-muted sm:text-xl">{product.tagline}</p>
 
             <div className="mt-9 flex flex-wrap gap-3 sm:gap-4">

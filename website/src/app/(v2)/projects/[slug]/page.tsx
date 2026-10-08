@@ -9,8 +9,6 @@ import { breadcrumbJsonLd, shortTitle, snippet } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
-const statusLabel = { shipped: "Shipped", "in-development": "In development", "in-progress": "In progress" };
-
 export async function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
 }
@@ -61,12 +59,8 @@ export default async function ProjectPage({ params }: Props) {
       <section className="relative overflow-hidden pb-14 pt-36 sm:pt-44">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-[radial-gradient(60%_70%_at_50%_0%,rgba(221,216,255,0.7),rgba(246,245,241,0))]" aria-hidden />
         <div className={`${container} relative`}>
-          <Link href="/v2#work" className="inline-flex items-center gap-2 font-semibold text-mu-muted transition hover:text-mu-accent">← All work</Link>
-          <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-mu-line bg-white px-4 py-1.5 text-sm font-semibold text-mu-ink">
-            <span className={`h-2 w-2 rounded-full ${p.status === "shipped" ? "bg-emerald-500" : "bg-amber-500"}`} />
-            {statusLabel[p.status]}
-          </p>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-mu-ink text-balance sm:text-6xl">{p.title}</h1>
+          <Link href="/#work" className="inline-flex items-center gap-2 font-semibold text-mu-muted transition hover:text-mu-accent">← All work</Link>
+          <h1 className="mt-8 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-mu-ink text-balance sm:text-6xl">{p.title}</h1>
           <p className="mt-6 max-w-2xl text-xl text-mu-body">{p.subtitle}</p>
           <div className="mt-9 flex flex-wrap gap-3">
             {p.live && <a href={p.live} target="_blank" rel="noopener noreferrer" className={btnPrimary}>Visit live project</a>}

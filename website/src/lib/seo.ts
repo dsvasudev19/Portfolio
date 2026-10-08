@@ -22,5 +22,5 @@ export function snippet(text: string, max = 158): string {
   return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
 }
 
-/** "CORE (AI Native …)" → "CORE" — long parenthetical names make titles overflow. */
+/** "CORE (Cross Operational …)" → "CORE" — long parenthetical names make titles overflow. */
 export const shortTitle = (t: string) => t.replace(/\s*\(.*\)/, "").trim();
