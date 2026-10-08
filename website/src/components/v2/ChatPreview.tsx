@@ -5,19 +5,19 @@ import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-mot
 
 const qa = [
   {
-    q: "What has Vasudev built?",
-    lookup: "Looking through his projects…",
-    a: "He has built AI-powered platforms like ElevateHub (a learning platform) and CORE (a workforce and project platform), plus a co-investing platform at Kupa Inc, mobile apps and microservice systems.",
+    q: "What have you built?",
+    lookup: "Looking through my projects…",
+    a: "I've built AI-powered platforms like ElevateHub (a learning platform) and CORE (a workforce and project platform), plus a co-investing platform at Kupa Inc, mobile apps and microservice systems.",
   },
   {
-    q: "What does he work with?",
-    lookup: "Checking his skills…",
+    q: "What do you work with?",
+    lookup: "Checking my skills…",
     a: "Mostly Java with Spring Boot and Node.js with TypeScript behind the scenes, React and Next.js for the screens you see, and AI tools like Claude, MCP and LangGraph.",
   },
   {
-    q: "Is he available for work?",
-    lookup: "Checking his availability…",
-    a: "Yes — he's open to select engagements. I can look at his calendar and book a call for you, if you'd like.",
+    q: "Are you available for work?",
+    lookup: "Checking my availability…",
+    a: "Yes — I'm open to select engagements. Send me a note through the contact form or by email and we can set up a call.",
   },
 ];
 
@@ -135,7 +135,7 @@ export function ChatPreview() {
 
         <div className="border-t border-mu-line bg-mu-bg/60 px-5 py-4 sm:px-7" aria-hidden>
           <div className="flex items-center justify-between rounded-full border border-mu-line bg-white px-5 py-3 text-mu-muted">
-            <span>Ask anything about Vasudev…</span>
+            <span>Ask me anything…</span>
             <span className="grid h-8 w-8 place-items-center rounded-full bg-mu-ink text-white">↑</span>
           </div>
         </div>

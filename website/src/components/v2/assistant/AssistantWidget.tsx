@@ -12,7 +12,7 @@ type Msg = { id: number; role: "user" | "assistant"; text: string; pending?: boo
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-/** Open the assistant from anywhere: openAssistant("What has Vasudev built?") */
+/** Open the assistant from anywhere: openAssistant("What have you built?") */
 export function openAssistant(question?: string) {
   window.dispatchEvent(new CustomEvent("assistant:open", { detail: { question } }));
 }
@@ -90,7 +90,7 @@ export function AssistantWidget() {
           const msg =
             err instanceof AssistantMessageError
               ? err.message
-              : `I can't reach the assistant right now. Please try again in a moment, or email Vasudev at ${site.contact.email}.`;
+              : `I can't reach the assistant right now. Please try again in a moment, or email me at ${site.contact.email}.`;
           update((x) => ({ ...x, text: msg, pending: false, failed: true }));
         }
       } finally {
@@ -181,7 +181,7 @@ export function AssistantWidget() {
               <div className="flex gap-2.5">
                 <span className="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-mu-accent to-violet-500 text-xs text-white" aria-hidden>✦</span>
                 <p className="rounded-2xl rounded-tl-md border border-white/80 bg-white/85 px-4 py-3 text-[0.97rem] leading-relaxed text-mu-ink shadow-sm">
-                  Hi! Skip the reading &mdash; ask me anything about Vasudev&rsquo;s work, skills or availability.
+                  Hi! I&rsquo;m Vasudev&rsquo;s AI assistant, speaking on his behalf. Ask me anything about my work, skills or availability.
                 </p>
               </div>
 
@@ -246,7 +246,7 @@ export function AssistantWidget() {
                   ref={inputRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask anything about Vasudev…"
+                  placeholder="Ask me anything…"
                   autoComplete="off"
                   className="min-w-0 flex-1 bg-transparent text-base text-mu-ink placeholder:text-mu-muted focus:outline-none"
                 />
@@ -254,7 +254,7 @@ export function AssistantWidget() {
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M12 19V5M6 11l6-6 6 6" /></svg>
                 </button>
               </div>
-              <p className="mt-2 text-center text-xs text-mu-muted">AI can make mistakes. Email Vasudev for anything important.</p>
+              <p className="mt-2 text-center text-xs text-mu-muted">AI can make mistakes. Email me for anything important.</p>
             </form>
           </motion.section>
         )}
