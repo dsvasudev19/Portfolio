@@ -6,7 +6,7 @@ export const site = {
   gtmId: process.env.NEXT_PUBLIC_GTM_ID || "GTM-PS3PQ268",
 
   hero: {
-    eyebrow: "Full-Stack Engineer & Agentic AI Specialist",
+    eyebrow: "Full Stack & Agentic AI Engineer",
     headline: ["Your idea. Shipped as", "production software."],
     description:
       "I build full-stack platforms and agentic AI tooling for startups — from architecture to launch.",

@@ -31,7 +31,7 @@ export function renderOgImage({ title, subtitle, eyebrow }: { title: string; sub
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#b8bece" }}>
           <span>dsvasudev.in</span>
-          <span>Full-Stack Engineer · Agentic AI</span>
+          <span>Hyderabad, India</span>
         </div>
       </div>
     ),

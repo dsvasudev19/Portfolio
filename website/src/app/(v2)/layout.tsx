@@ -19,7 +19,7 @@ const serif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: { absolute: "Vasudev DS — Full-Stack Engineer & Agentic AI Specialist" },
+  title: { absolute: "Vasudev DS — Full Stack & Agentic AI Engineer" },
   description:
     "Software engineer building dependable full-stack platforms and agentic AI systems for startups — from first architecture to launch.",
   alternates: { canonical: "/" },

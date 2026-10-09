@@ -8,11 +8,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Vasudev DS — Full-Stack Developer & Agentic AI Specialist",
+    default: "Vasudev DS — Full Stack & Agentic AI Engineer",
     template: "%s | Vasudev DS",
   },
   description:
-    "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
+    "Full Stack & Agentic AI Engineer fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
   keywords: [
     "Vasudev DS",
     "dsvasudev",
@@ -37,7 +37,8 @@ export const metadata: Metadata = {
     "DS Vasudev",
     "Full Stack Developer",
     "Full Stack Engineer",
-    "Agentic AI Specialist",
+    "Agentic AI Engineer",
+    "Full Stack & Agentic AI Engineer",
     "Model Context Protocol",
     "MCP Servers",
     "Java Spring Boot",
@@ -82,16 +83,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: site.url,
-    title: "Vasudev DS — Full Stack Developer & Agentic AI Specialist",
+    title: "Vasudev DS — Full Stack & Agentic AI Engineer",
     description:
-      "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
+      "Full Stack & Agentic AI Engineer fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
     siteName: "Vasudev DS | Vasu{.dev}",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vasudev DS — Full Stack Developer & Agentic AI Specialist",
+    title: "Vasudev DS — Full Stack & Agentic AI Engineer",
     description:
-      "Full-Stack Engineer & Agentic AI Specialist fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
+      "Full Stack & Agentic AI Engineer fueling startups with high-performance platforms, custom MCP servers, and production-ready software — built to scale.",
     creator: "@dsvasudev19",
   },
   robots: {
@@ -138,7 +139,7 @@ export default function RootLayout({
         "identifier": "dsvasudev",
         "url": site.url,
         "image": `${site.url}/assets/author.png`,
-        "jobTitle": "Full Stack Developer & Agentic AI Specialist",
+        "jobTitle": "Full Stack & Agentic AI Engineer",
         "description": site.hero.description,
         "address": {
           "@type": "PostalAddress",
@@ -195,7 +196,7 @@ export default function RootLayout({
         "@type": "ProfilePage",
         "@id": `${site.url}/#profilepage`,
         "url": site.url,
-        "name": `Vasudev DS — Full Stack Engineer & Agentic AI Specialist`,
+        "name": `Vasudev DS — Full Stack & Agentic AI Engineer`,
         "mainEntity": { "@id": `${site.url}/#person` },
         "hasPart": [
           {

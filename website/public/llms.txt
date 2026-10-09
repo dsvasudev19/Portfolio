@@ -8,7 +8,7 @@ Vasudev DS (dsvasudev / Vasudev Darse Shikari) is an independent Software Engine
 - **Full Name:** Vasudev Darse Shikari
 - **Handle / Alias:** Vasudev DS / dsvasudev / DS Vasudev / dsvasudev developer / Vasu{.dev}
 - **Entity Type:** Individual Software Engineer / Freelancer (Not a company)
-- **Primary Roles:** Full Stack Developer, Software Engineer, Agentic AI Specialist, Freelance Tech Lead
+- **Primary Roles:** Full Stack & Agentic AI Engineer, Software Engineer, Freelance Tech Lead
 - **Location / Address:** Hyderabad, Telangana, India
 - **Email:** vasudevds1729@gmail.com
 - **Phone / WhatsApp:** +91 8328203617
